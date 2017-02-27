@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Test",
+  "description": "Replacing ads with data about your environment.",
+  "version": "1.0.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+        "matches": ["<all_urls>"],
+        "js": ["js/test.js"],
+        "run_at": "document_end",
+        "all_frames": true
+    }
+  ]
+}
