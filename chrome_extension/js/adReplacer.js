@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  var imageURL = chrome.extension.getURL("images/Harambe.png")
+  var pageURL = chrome.extension.getURL("page/index.html")
   var adReplacer = {
     replacedCount : '',
     processAdNode : function (elem) {
@@ -36,11 +36,12 @@
         display : 'block',
         position : 'absolute',
         zIndex : 100,
-        background : "url(" + imageURL + ")",
         backgroundSize : "contain",
         backgroundPosition : "left " + ['top', 'bottom', 'center'][( Math.floor(Math.random() * 3) )],
         backgroundRepeat : "no-repeat"
-      })
+      }).load(pageURL)
+
+      
       
 
       wrap.append(div)
