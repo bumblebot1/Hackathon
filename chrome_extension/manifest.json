@@ -5,7 +5,8 @@
   "author" : "Code4Pizza",
   "version": "1.0.0",
   "icons": {
-    "32" : "images/icon.png"
+    "32" : "images/icon.png",
+    "64" : "images/icon-64.png"
   },
   "permissions": [
     "storage",
