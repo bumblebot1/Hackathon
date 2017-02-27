@@ -1,7 +1,6 @@
 var dataOut = new WebSocket("client_URL");
 
 dataOut.onopen = function (event) {
-  dataOut.send("Opening connection.");
   console.log("Opening connection.");
 }
 
@@ -14,10 +13,15 @@ dataOut.onclose = function (event) {
 }
 
 function getData () {
-  return "here is some data.";
+  var light = 0;
+  var temp = 0;
+  var text = '{ "data" : [' +
+    '{"metric":"light", "value": light},' +
+    '{"metric":"temp", "value": temp} ]}';
+  return text;
 }
 
 function sendData () {
   data = getData;
-  socket.send(message);
+  dataOut.send(message);
 }
