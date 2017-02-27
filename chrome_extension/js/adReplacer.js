@@ -1,62 +1,68 @@
 (function() {
   'use strict';
   var imageURL = chrome.extension.getURL("images/Harambe.png")
-  var adFinder = {
+  var adReplacer = {
     replacedCount : '',
     processAdNode : function (elem) {
-      var goodBye = false
-      //if (elem.offsetWidth < 2) goodBye = true
-      //if (elem.offsetHeight < 2) goodBye = true
+      var done = false
+
       if (elem.tagName !== 'IFRAME'
           && elem.tagName !== 'IMG'
           && elem.tagName !== 'DIV'
           && elem.tagName !== 'OBJECT'
           && elem.tagName !== 'A'
           && elem.tagName !== 'INS'
-          ) goodBye = true
-          
+          ) done = true
+
+      //speed up by skipping the elements already replaced
+      if ($(elem).data('replaced')) 
+        done = true
+      
+      $(elem).data('replaced', true)
+      
+      if (done) return
+
       var origW = elem.offsetWidth
       var origH = elem.offsetHeight
-      console.log("here");
-      var $wrap = $('<div>').css({
+      var wrap = $('<div>').css({
         width: origW,
         height: origH,
         position : $(elem).css('position') || 'relative'
       }).attr('class', elem.className).attr('id', elem.id)
       
-      var div = document.createElement("div");
-      div.style.width = origW + 'px'
-      div.style.height = origH + 'px'
-      div.style.display = 'block'
-      div.style.position = 'absolute'
-      div.style.zIndex = 100
-      div.style.background = "url(" + imageURL + ")"
-      div.style.backgroundSize = "contain"
-      div.style.backgroundPosition = "left " + ['top', 'bottom', 'center'][( Math.floor(Math.random() * 3) )]
-      div.style.backgroundRepeat = "no-repeat"
+      var div = $('<div>').css({
+        width : origW + 'px',
+        height : origH + 'px',
+        display : 'block',
+        position : 'absolute',
+        zIndex : 100,
+        background : "url(" + imageURL + ")",
+        backgroundSize : "contain",
+        backgroundPosition : "left " + ['top', 'bottom', 'center'][( Math.floor(Math.random() * 3) )],
+        backgroundRepeat : "no-repeat"
+      })
+      
 
-      $wrap.append(div)
-      $(elem.parentElement).append($wrap)
+      wrap.append(div)
+      $(elem.parentElement).append(wrap)
       $(elem).remove()
       return true
     },
-
     getBlockedSites : function (){
-      return adFinder.localGet('blockedSites')
+      return adReplacer.localGet('blockedSites')
         .then(function (obj){
           return obj.blockedSites || []
         })
     },
     toggleSiteBlock : function (host){
-      return adFinder.getBlockedSites()
+      return adReplacer.getBlockedSites()
       .then(function (blockedSites){
         if (R.contains(host, blockedSites)) {
           blockedSites = R.filter(R.pipe(R.equals(host),R.not), blockedSites)
-          
         } else {
           blockedSites.push(host)
         }
-        return adFinder.localSet('blockedSites', blockedSites)
+        return adReplacer.localSet('blockedSites', blockedSites)
       })
     },
     // abstract storage for different browsers
@@ -95,7 +101,7 @@
                   return /^[a-z0-9]/.test(line) && !/##/.test(line)
                 })
                 .map(R.split('#@#'))
-          adFinder.localSet('selectors', {
+          adReplacer.localSet('selectors', {
             selectors : selectors,
             whitelist : whitelist
           })
@@ -104,10 +110,10 @@
     },
     getSelectors : function () {
       var response
-      return adFinder.localGet('selectors')
+      return adReplacer.localGet('selectors')
       .then(function (obj) {
         response = obj.selectors
-        return adFinder.getBlockedSites()
+        return adReplacer.getBlockedSites()
       })
       .then(function (blockedSites){
         response.blockedSites = blockedSites
@@ -119,10 +125,8 @@
         return R.set(R.lensProp(prop), typeof fn === 'function' ? fn(obj) : fn, R.clone(obj))
       }
     })
-
   }
-
-  window.adFinder = adFinder
+  window.adReplacer = adReplacer
 })();
 
 

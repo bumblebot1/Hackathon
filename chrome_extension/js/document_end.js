@@ -1,17 +1,21 @@
 jQuery(function ($){
+  "use strict"
   var howMany = 3
   var tried = 0
-  adFinder.getSelectors()
+  adReplacer.getSelectors()
   .then(function (obj){
     var selectors = obj.selectors
-    ;(function checkIFrames() {
-      var found = $(selectors.join(',')).each(function (){
-        var $this = $(this)
-        adFinder.processAdNode(this)
-      })
-      if (++tried < howMany) {
-        setTimeout(checkIFrames, 3000)
-      }
-    })()
+    replaceAds(selectors, howMany, tried)
   })
 })
+
+function replaceAds(selectors, howMany, tried) {
+  var found = $(selectors.join(',')).each(function (){
+    adReplacer.processAdNode(this)
+  })
+  if (++tried < howMany) {
+    setTimeout(function(){
+      replaceAds(selectors, howMany, tried);
+    }, 3000)
+  }
+}

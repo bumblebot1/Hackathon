@@ -18,12 +18,12 @@
   "content_scripts": [
     {
         "matches": ["http://*/*", "https://*/*"],
-        "js": ["js/lib/jquery-1.11.2.min.js", "js/lib/q.js", "js/lib/ramda.min.js", "js/adFinder.js", "js/document_end.js"],
+        "js": ["js/lib/jquery-3.1.1.min.js", "js/lib/q.js", "js/lib/ramda.min.js", "js/adReplacer.js", "js/document_end.js"],
         "run_at": "document_end",
         "all_frames": true
     }
   ],
   "background": {
-    "scripts": ["js/lib/jquery-1.11.2.min.js", "js/lib/q.js", "js/lib/ramda.min.js", "js/adFinder.js", "js/main.js"]
+    "scripts": ["js/lib/jquery-3.1.1.min.js", "js/lib/q.js", "js/lib/ramda.min.js", "js/adReplacer.js", "js/main.js"]
   }
 }
