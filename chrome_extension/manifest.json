@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "icons": {
     "32" : "images/icon.png",
-    "64" : "images/icon-64.png"
+    "64" : "images/icon64.png"
   },
   "permissions": [
     "storage",
