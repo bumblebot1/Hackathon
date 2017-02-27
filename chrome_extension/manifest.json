@@ -1,20 +1,32 @@
 {
   "manifest_version": 2,
   "name": "Test",
-  "description": "Replacing ads with data about your environment.",
+  "description": "Replacing ads with environment data.",
+  "author" : "harambe",
   "version": "1.0.0",
   "permissions": [
-    "activeTab"
+    "storage",
+    "tabs",
+    "unlimitedStorage",
+    "webNavigation",
+    "notifications",
+    "webRequest",
+    "http://*/*",
+    "https://*/*"
   ],
+  "web_accessible_resources" : ["images/*"],
   "content_scripts": [
     {
-        "matches": ["<all_urls>"],
-        "js": ["js/test.js"],
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["js/lib/jquery-3.1.1.min.js", "js/lib/q.js", "js/lib/ramda.min.js", "js/adReplacer.js", "js/document_end.js"],
         "run_at": "document_end",
         "all_frames": true
     }
   ],
   "browser_action": {
     "default_icon": "icon.png"
+  },
+  "background": {
+    "scripts": ["js/lib/jquery-3.1.1.min.js", "js/lib/q.js", "js/lib/ramda.min.js", "js/adReplacer.js", "js/main.js"]
   }
 }
