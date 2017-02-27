@@ -1,3 +1,6 @@
+var express = require('express');
+var app = express()
+
 var WebSocket = require("ws");
 var wss = new WebSocket.Server({port: 8080});
 
@@ -11,6 +14,7 @@ var serialPort = new SerialPort('/dev/ttyACM0', {
 });
 
 var receivedData = "";
+var last_recv = "";
 
 serialPort.on("open", function () {
     console.log('open serial communication');
@@ -22,6 +26,8 @@ serialPort.on("open", function () {
             receivedData = '';
             console.log("{" + sendData + "}");
             
+            last_recv = "{" + sendData + "}";
+
             // Broadcast to everyone else. 
             wss.clients.forEach(function each(client) {
                 if (client.readyState === WebSocket.OPEN) {
@@ -29,5 +35,17 @@ serialPort.on("open", function () {
                 }
             });
         }
-   });
+    });
+});
+
+app.get('/', function (req, res){
+    console.log("sam sucks");
+});
+
+app.get('/api', function (req, res) {
+    res.send(last_recv);
+});
+
+app.listen(8000, function(){
+    console.log("Listening");
 });
