@@ -1,0 +1,128 @@
+(function() {
+  'use strict';
+  var imageURL = chrome.extension.getURL("images/Harambe.png")
+  var adFinder = {
+    replacedCount : '',
+    processAdNode : function (elem) {
+      var goodBye = false
+      //if (elem.offsetWidth < 2) goodBye = true
+      //if (elem.offsetHeight < 2) goodBye = true
+      if (elem.tagName !== 'IFRAME'
+          && elem.tagName !== 'IMG'
+          && elem.tagName !== 'DIV'
+          && elem.tagName !== 'OBJECT'
+          && elem.tagName !== 'A'
+          && elem.tagName !== 'INS'
+          ) goodBye = true
+          
+      var origW = elem.offsetWidth
+      var origH = elem.offsetHeight
+      console.log("here");
+      var $wrap = $('<div>').css({
+        width: origW,
+        height: origH,
+        position : $(elem).css('position') || 'relative'
+      }).attr('class', elem.className).attr('id', elem.id)
+      
+      var div = document.createElement("div");
+      div.style.width = origW + 'px'
+      div.style.height = origH + 'px'
+      div.style.display = 'block'
+      div.style.position = 'absolute'
+      div.style.zIndex = 100
+      div.style.background = "url(" + imageURL + ")"
+      div.style.backgroundSize = "contain"
+      div.style.backgroundPosition = "left " + ['top', 'bottom', 'center'][( Math.floor(Math.random() * 3) )]
+      div.style.backgroundRepeat = "no-repeat"
+
+      $wrap.append(div)
+      $(elem.parentElement).append($wrap)
+      $(elem).remove()
+      return true
+    },
+
+    getBlockedSites : function (){
+      return adFinder.localGet('blockedSites')
+        .then(function (obj){
+          return obj.blockedSites || []
+        })
+    },
+    toggleSiteBlock : function (host){
+      return adFinder.getBlockedSites()
+      .then(function (blockedSites){
+        if (R.contains(host, blockedSites)) {
+          blockedSites = R.filter(R.pipe(R.equals(host),R.not), blockedSites)
+          
+        } else {
+          blockedSites.push(host)
+        }
+        return adFinder.localSet('blockedSites', blockedSites)
+      })
+    },
+    // abstract storage for different browsers
+    localSet : function (key, thing) {
+      var d = Q.defer()
+      if (typeof chrome !== 'undefined') {
+        var save = {}
+        save[key] = thing
+        chrome.storage.local.set(save, d.resolve)
+      }
+      return d.promise
+    },
+    localGet : function (key) {
+      var d = Q.defer()
+      if (typeof chrome !== 'undefined') {
+        chrome.storage.local.get(key, d.resolve)
+      }
+      return d.promise
+    },
+    fetchSelectorList : function () {
+      $.ajax({
+        url : 'https://easylist-downloads.adblockplus.org/easylist.txt',
+        type : 'get',
+        success : function (txt){
+          var txtArr = txt.split("\n").reverse() 
+          var selectors = txtArr 
+                .filter(function (line) {
+                  return /^##/.test(line)
+                })
+                .map(function (line) {
+                  return line.replace(/^##/, '')
+                })
+
+          var whitelist = txtArr
+                .filter(function (line){
+                  return /^[a-z0-9]/.test(line) && !/##/.test(line)
+                })
+                .map(R.split('#@#'))
+          adFinder.localSet('selectors', {
+            selectors : selectors,
+            whitelist : whitelist
+          })
+        }
+      })
+    },
+    getSelectors : function () {
+      var response
+      return adFinder.localGet('selectors')
+      .then(function (obj) {
+        response = obj.selectors
+        return adFinder.getBlockedSites()
+      })
+      .then(function (blockedSites){
+        response.blockedSites = blockedSites
+        return response
+      })
+    },
+    addPropToObj : R.curry(function (prop, fn){
+      return function (obj) {
+        return R.set(R.lensProp(prop), typeof fn === 'function' ? fn(obj) : fn, R.clone(obj))
+      }
+    })
+
+  }
+
+  window.adFinder = adFinder
+})();
+
+
