@@ -9,6 +9,12 @@ if (typeof chrome !== 'undefined') {
       return adReplacer.localGet('disableAutoUpdate')
     })
   });
+
+  chrome.browserAction.onClicked.addListener(function(){
+    chrome.tabs.create({
+      url: chrome.extension.getURL('page/index.html')
+    })
+  });
 }
 
 function init(event) {

@@ -18,7 +18,7 @@
     "http://*/*",
     "https://*/*"
   ],
-  "web_accessible_resources" : ["images/*"],
+  "web_accessible_resources" : ["images/*", "page/index.html"],
   "content_scripts": [
     {
         "matches": ["http://*/*", "https://*/*"],
