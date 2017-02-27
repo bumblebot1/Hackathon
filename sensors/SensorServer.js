@@ -2,7 +2,7 @@ var WebSocket = require("ws");
 var wss = new WebSocket.Server({port: 8080});
 
 var SerialPort = require("serialport");
-var serialPort = new SerialPort('/dev/cu.usbmodem1421', {
+var serialPort = new SerialPort('/dev/ttyACM0', {
     baudrate: 9600,
     dataBits: 8, 
     parity: 'none', 
