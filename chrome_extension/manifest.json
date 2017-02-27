@@ -2,8 +2,12 @@
   "manifest_version": 2,
   "name": "Test",
   "description": "Replacing ads with environment data.",
-  "author" : "harambe",
+  "author" : "Code4Pizza",
   "version": "1.0.0",
+  "icons": {
+    "32" : "images/icon.png",
+    "64" : "images/icon-64.png"
+  },
   "permissions": [
     "storage",
     "tabs",
@@ -14,7 +18,7 @@
     "http://*/*",
     "https://*/*"
   ],
-  "web_accessible_resources" : ["images/*"],
+  "web_accessible_resources" : ["images/*", "page/index.html"],
   "content_scripts": [
     {
         "matches": ["http://*/*", "https://*/*"],
@@ -23,6 +27,9 @@
         "all_frames": true
     }
   ],
+  "browser_action": {
+    "default_icon": "images/icon.png"
+  },
   "background": {
     "scripts": ["js/lib/jquery-3.1.1.min.js", "js/lib/q.js", "js/lib/ramda.min.js", "js/adReplacer.js", "js/main.js"]
   }
