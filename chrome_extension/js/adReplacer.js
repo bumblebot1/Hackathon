@@ -43,7 +43,6 @@
 
 
 
-
       wrap.append(div)
       $(elem.parentElement).append(wrap)
       $(elem).remove()

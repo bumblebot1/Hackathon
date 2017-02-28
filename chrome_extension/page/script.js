@@ -6,7 +6,7 @@ for(var i = 0; i < 20; i++){
   data.push({light:0,temp:0});
 }
 
-//window.addEventListener("load", load_dat_graph);
+window.addEventListener("load", load_dat_graph);
 
 function load_dat_graph() {
 
