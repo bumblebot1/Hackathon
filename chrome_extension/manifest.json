@@ -19,7 +19,7 @@
     "https://*/*",
     "file:///*/*"
   ],
-  "web_accessible_resources" : ["images/*", "page/index.html", "page/script.js"],
+  "web_accessible_resources" : ["images/*", "page/index.html", "page/script.js", "js/lib/jquery-3.1.1.min.js", "js/lib/d3.min.js"],
   "content_scripts": [
     {
         "matches": ["http://*/*", "https://*/*", "file:///*/*"],
