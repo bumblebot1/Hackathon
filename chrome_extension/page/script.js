@@ -47,6 +47,19 @@ function load_dat_graph() {
 
   ws.onmessage = function (event) {
     var new_data = JSON.parse(event.data);
+    console.log(new_data);
+    if(new_data.light < 350)
+    {
+        document.getElementById("dabboy").innerHTML = "It's dark outside";    
+    } else {
+        // $("#dabboy").innerHTML = "it's light out side. ";
+        if(new_data.light_switch == true)
+        {
+            // $("#dabboy").innerHTML += "you shoud turn your light offß";
+            document.getElementById("dabboy").innerHTML = "Please turn your lights off";    
+        }
+    }
+    
     data.push(new_data);
     data = data.slice(1,21);
 

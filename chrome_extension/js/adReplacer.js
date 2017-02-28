@@ -52,6 +52,7 @@
       div.append(wrap);
       wrap.append(image)
       $(elem.parentElement).append(div)
+
       $(elem).remove()
       return true
     },
