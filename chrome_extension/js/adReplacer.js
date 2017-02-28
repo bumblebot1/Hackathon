@@ -1,6 +1,5 @@
 (function() {
   'use strict';
-  var pageURL = chrome.extension.getURL("page/index.html")
   var adReplacer = {
     replacedCount : '',
     processAdNode : function (elem) {
@@ -24,13 +23,22 @@
 
       var origW = elem.offsetWidth
       var origH = elem.offsetHeight
-      var wrap = $('<div>').css({
+      var div = $('<div>').css({
         width: origW,
         height: origH,
         position : $(elem).css('position') || 'relative'
-      }).attr('class', elem.className).attr('id', elem.id)
+      }).attr('class', elem.className).attr('id', elem.id);
 
-      var div = $('<div>').css({
+      var wrap = $('<a>').css({
+        width: origW,
+        height: origH,
+        position : $(elem).css('position') || 'relative'
+      }).attr('href', chrome.extension.getURL('page/index.html'));
+
+      var image = $('<img>', {
+        src: chrome.extension.getURL("images/Harambe.png")
+      });
+      image.css({
         width : origW + 'px',
         height : origH + 'px',
         display : 'block',
@@ -39,14 +47,12 @@
         backgroundSize : "contain",
         backgroundPosition : "left " + ['top', 'bottom', 'center'][( Math.floor(Math.random() * 3) )],
         backgroundRepeat : "no-repeat"
-      }).load(pageURL)
+      });
 
-
-
-      wrap.append(div)
-      $(elem.parentElement).append(wrap)
+      div.append(wrap);
+      wrap.append(image)
+      $(elem.parentElement).append(div)
       $(elem).remove()
-      load_dat_graph()
       return true
     },
     getBlockedSites : function (){
