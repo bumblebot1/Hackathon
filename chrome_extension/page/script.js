@@ -48,6 +48,11 @@ function load_dat_graph() {
   ws.onmessage = function (event) {
     var new_data = JSON.parse(event.data);
     console.log(new_data);
+    if (new_data.temp > 27) {
+        document.getElementById("tempdiv").innerHTML = "It's too hot. Turn your heating off!";   
+    } else {
+        document.getElementById("tempdiv").innerHTML = "Temperature is just right";   
+    }
     if(new_data.light < 350)
     {
         document.getElementById("dabboy").innerHTML = "It's dark outside";    
