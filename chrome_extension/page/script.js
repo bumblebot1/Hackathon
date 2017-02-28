@@ -1,19 +1,16 @@
 var ws = new WebSocket("ws://192.168.1.145:8080");
 
-var data = [];
-
-for(var i = 0; i < 20; i++){
-  data.push({light:0,temp:0});
+if(document.location.pathname == "/page/index.html" ){
+  $(function(){
+    load_dat_graph(d3.select($('svg')[0]))
+  });
 }
 
-//window.addEventListener("load", load_dat_graph);
 
-function load_dat_graph() {
-
-  console.log("load_dat_graphed")
-
-  var svg = d3.select("svg"),
-      margin = {top: 20, right: 20, bottom: 30, left: 50},
+function load_dat_graph(svg) {
+  console.log("Loading graph");
+  console.log(svg);
+  var margin = {top: 20, right: 20, bottom: 30, left: 50},
       width = +svg.attr("width") - margin.left - margin.right,
       height = +svg.attr("height") - margin.top - margin.bottom,
       g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -35,15 +32,16 @@ function load_dat_graph() {
   g.append("path").classed("light",true);
   g.append("path").classed("temp",true);
 
-  // svg
-  // .append('g')
-  // .classed("xaxis",true)
-  // .attr("transform", "translate("+margin.left+","+margin.top+")");
-
   svg
-  .append('g')
-  .classed("yaxis",true)
-  .attr("transform", "translate("+margin.left+","+margin.top+")");
+    .append('g')
+    .classed("yaxis",true)
+    .attr("transform", "translate("+margin.left+","+margin.top+")");
+
+  var data = [];
+
+  for(var i = 0; i < 20; i++){
+    data.push({light:0,temp:0});
+  }
 
   ws.onmessage = function (event) {
     var new_data = JSON.parse(event.data);
@@ -60,25 +58,13 @@ function load_dat_graph() {
 
     y.domain(d3.extent(ycombined, function(d) {return d; }));
 
-    // var xAxis = d3.axisBottom(x)
-    //     .ticks(20);
-
     var yAxis = d3.axisLeft(y)
         .ticks(5);  //
-
-    // svg
-    //   .select(".xaxis")
-    //   .call(xAxis);
 
     svg
       .select(".yaxis")
       .call(yAxis);
 
-
-
-    // g.append("g")
-    //     .attr("transform", "translate(0," + height + ")")
-    //     .call(d3.axisBottom(x))
 
     g.select(".light")
       .datum(data)
@@ -98,6 +84,4 @@ function load_dat_graph() {
         .attr("stroke-width", 1.5)
         .attr("d", lineTemp);
   }
-
-
 };

@@ -30,24 +30,10 @@
         position : $(elem).css('position') || 'relative'
       }).attr('class', elem.className).attr('id', elem.id)
 
-      var div = $('<div>').css({
-        width : origW + 'px',
-        height : origH + 'px',
-        display : 'block',
-        position : 'absolute',
-        zIndex : 100,
-        backgroundSize : "contain",
-        backgroundPosition : "left " + ['top', 'bottom', 'center'][( Math.floor(Math.random() * 3) )],
-        backgroundRepeat : "no-repeat"
-      }).load(pageURL)
+        console.log("Loading graph");
+      load_dat_graph(d3.select($("<svg width=\""+origW+"\" + height=\""+origH+"\"></svg>").appendTo(wrap)[0]));
+      $(elem).remove();
 
-
-
-
-      wrap.append(div)
-      $(elem.parentElement).append(wrap)
-      $(elem).remove()
-      load_dat_graph()
       return true
     },
     getBlockedSites : function (){
