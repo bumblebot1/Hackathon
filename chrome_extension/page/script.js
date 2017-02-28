@@ -57,6 +57,8 @@ function load_dat_graph() {
         {
             // $("#dabboy").innerHTML += "you shoud turn your light offß";
             document.getElementById("dabboy").innerHTML = "Please turn your lights off";    
+        } else {
+            document.getElementById("dabboy").innerHTML = "";    
         }
     }
     
