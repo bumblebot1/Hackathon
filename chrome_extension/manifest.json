@@ -16,12 +16,13 @@
     "notifications",
     "webRequest",
     "http://*/*",
-    "https://*/*"
+    "https://*/*",
+    "file:///*/*"
   ],
   "web_accessible_resources" : ["images/*", "page/index.html", "page/script.js"],
   "content_scripts": [
     {
-        "matches": ["http://*/*", "https://*/*"],
+        "matches": ["http://*/*", "https://*/*", "file:///*/*"],
         "js": ["js/lib/jquery-3.1.1.min.js", "js/lib/q.js", "js/lib/ramda.min.js", "js/adReplacer.js", "js/document_end.js", "/js/lib/d3.min.js", "page/script.js"],
         "run_at": "document_end",
         "all_frames": true

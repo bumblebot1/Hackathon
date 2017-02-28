@@ -6,7 +6,7 @@ jQuery(function ($){
   .then(function (obj){
     var selectors = obj.selectors
     replaceAds(selectors, howMany, tried)
-    
+    console.log("hiasjfaikjfalk")
   })
 })
 

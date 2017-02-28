@@ -15,11 +15,11 @@
           ) done = true
 
       //speed up by skipping the elements already replaced
-      if ($(elem).data('replaced')) 
+      if ($(elem).data('replaced'))
         done = true
-      
+
       $(elem).data('replaced', true)
-      
+
       if (done) return
 
       var origW = elem.offsetWidth
@@ -29,7 +29,7 @@
         height: origH,
         position : $(elem).css('position') || 'relative'
       }).attr('class', elem.className).attr('id', elem.id)
-      
+
       var div = $('<div>').css({
         width : origW + 'px',
         height : origH + 'px',
@@ -41,12 +41,13 @@
         backgroundRepeat : "no-repeat"
       }).load(pageURL)
 
-      
-      
+
+
 
       wrap.append(div)
       $(elem.parentElement).append(wrap)
       $(elem).remove()
+      load_dat_graph()
       return true
     },
     getBlockedSites : function (){
@@ -88,8 +89,8 @@
         url : 'https://easylist-downloads.adblockplus.org/easylist.txt',
         type : 'get',
         success : function (txt){
-          var txtArr = txt.split("\n").reverse() 
-          var selectors = txtArr 
+          var txtArr = txt.split("\n").reverse()
+          var selectors = txtArr
                 .filter(function (line) {
                   return /^##/.test(line)
                 })
@@ -129,5 +130,3 @@
   }
   window.adReplacer = adReplacer
 })();
-
-

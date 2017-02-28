@@ -6,8 +6,11 @@ for(var i = 0; i < 20; i++){
   data.push({light:0,temp:0});
 }
 
+//window.addEventListener("load", load_dat_graph);
+
 function load_dat_graph() {
 
+  console.log("load_dat_graphed")
 
   var svg = d3.select("svg"),
       margin = {top: 20, right: 20, bottom: 30, left: 50},

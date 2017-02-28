@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><script data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.evt={};__ez.ck={};__ez.template={};__ez.evt.add=function(el,evt,handler){if(el.addEventListener){el.addEventListener(evt,handler,false)}else if(el.attachEvent){el.attachEvent('on'+evt,handler)}else{el['on'+evt]=handler()}};__ez.ck.get=function(cname,did){if(did!=null)cname=cname+"_"+did;var name=cname+"=";var decodedCookie=decodeURIComponent(document.cookie);var ca=decodedCookie.split(';');for(var i=0;i<ca.length;i++){var c=ca[i];while(c.charAt(0)==' '){c=c.substring(1)}if(c.indexOf(name)==0){return c.substring(name.length,c.length)}}return""};var EzoicPixel=function(){this.pixels=[];this.util=new EzoicPixelUtil();this.pixelUrl="/ezoic/e.gif";if((typeof ezJsu!=="undefined"&&ezJsu===true)||(typeof _ez_sa!=="undefined"&&_ez_sa===true)||((typeof window.isAmp!='undefined')&&isAmp===true)){this.pixelUrl="//g.ezoic.net"+this.pixelUrl}this.tEpoch=0;if(typeof _ezaq!=="undefined"&&_ezaq.hasOwnProperty("t_epoch")){this.tEpoch=_ezaq.t_epoch}};var EzoicPixelData=function(name,val){this.name=name;this.val=val};var EzoicPixelUtil=function(){};EzoicPixel.prototype={constructor:EzoicPixel,AddAndFireImpPixel:function(adSlot,pixelData){this.AddImpPixel(adSlot,pixelData,0,0,0,0,0);this.FirePixels()},AddAndFirePVPixel:function(pvId,pixelData){this.AddPVPixel(pvId,pixelData);this.FirePixels()},AddImpPixel:function(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id){if(!this.isDefined(adSlot,adSlot.getSlotElementId)){return}var ad_position_id=parseInt(adSlot.getTargeting('ap')[0]);var ad_size_array=adSlot.getSizes()[0];var ad_size=ad_size_array.l.toString()+"x"+ad_size_array.j.toString();var domainId="0";var countryCode="XX";if(typeof _ezaq!=="undefined"&&_ezaq.hasOwnProperty("domain_id")){domainId=_ezaq.domain_id.toString()}if(typeof _ezaq!=="undefined"&&_ezaq.hasOwnProperty("country")){countryCode=_ezaq.country}var impId=this.util.getSlotIID(adSlot),adUnit=adSlot.getSlotElementId();if(this.isDefined(impId,adUnit)&&this.validateData(pixelData)){pixelData=this.util.convertDataToStr(pixelData);this.pixels.push({type:"impression",impression_id:impId,domain_id:domainId,unit:adUnit,t_epoch:this.tEpoch,revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:ad_size,bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:countryCode,data:pixelData})}},AddImpPixelById:function(impId,pixelData){var domainId="0";if(typeof _ezaq!=="undefined"&&_ezaq.hasOwnProperty("domain_id")){domainId=_ezaq.domain_id.toString()}var vals=impId.split('/');if(this.isDefined(impId)&&vals.length===3&&this.validateData(pixelData)){var adUnit=vals[0];pixelData=this.util.convertDataToStr(pixelData);this.pixels.push({type:"impression",impression_id:impId,domain_id:domainId,unit:adUnit,t_epoch:this.tEpoch,data:pixelData})}},AddPVPixel:function(pvId,pixelData){var domainId="0";if(typeof _ezaq!=="undefined"&&_ezaq.hasOwnProperty("domain_id")){domainId=_ezaq.domain_id.toString()}if(this.isDefined(pvId)&&this.validateData(pixelData)){pixelData=this.util.convertDataToStr(pixelData);this.pixels.push({type:"pageview",pageview_id:pvId,domain_id:domainId,t_epoch:this.tEpoch,data:pixelData})}},FirePixels:function(){if(typeof document.visibilityState!='undefined'&&document.visibilityState=="prerender"){return}if(this.isDefined(this.pixels)&&this.pixels.length>0){(new Image()).src=this.pixelUrl+"?pixels="+encodeURIComponent(JSON.stringify(this.pixels))}this.pixels=[]},NewData:function(name,val){return new EzoicPixelData(name,val)},isDefined:function(){for(var i=0;i<arguments.length;i++){if(typeof arguments[i]==='undefined'||arguments[i]===null){console.error("Argument not defined. ",arguments);return false}}return true},validateData:function(pixelData){for(var i=0;i<pixelData.length;i++){if(pixelData[i]instanceof EzoicPixelData===false){console.error("Invalid pixelData. ",pixelData[i]);return false}}return true}};EzoicPixelUtil.prototype={constructor:EzoicPixelUtil,convertDataToStr:function(pixelData){if(typeof pixelData==="undefined"){return[]}try{for(var i in pixelData){pixelData[i].val=pixelData[i].val+''}}catch(e){}return pixelData},getSlotIID:function(slot){var iid=0;try{var map=slot.getTargetingMap(),dvid=slot.getSlotElementId();if(dvid.indexOf("div-gpt-ad")===-1){return iid}if(typeof map!=="undefined"){for(var key in map){if(key.indexOf('iid')!==-1&&typeof map[key][0]!=="undefined"){iid=map[key][0];break}}}}catch(e){}return iid}};__ez.template.isOrig=false;</script>
+<title>HTML Reference</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Keywords" content="HTML,CSS,JavaScript,SQL,PHP,jQuery,XML,DOM,Bootstrap,Web development,W3C,tutorials,programming,training,learning,quiz,primer,lessons,references,examples,source code,colors,demos,tips">
+<meta name="Description" content="Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, and XML.">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/lib/w3.css">
+<style>
+a:hover,a:active{color:#4CAF50}
+table.w3-table-all{margin:20px 0}
+/*OPPSETT AV TOP, TOPNAV, SIDENAV, MAIN, RIGHT OG FOOTER:*/
+.top {
+position:relative;
+background-color:#ffffff;
+height:68px;
+padding-top:20px;
+line-height:50px;
+overflow:hidden;
+z-index:2;
+}
+.w3schools-logo {
+font-family:fontawesome;
+text-decoration:none;
+line-height:1;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+font-size:37px;
+letter-spacing:3px;
+color:#555555;
+display:block;
+position:absolute;
+top:17px;
+}
+.w3schools-logo .dotcom {color:#4CAF50}
+.topnav {
+position:relative;
+z-index:2;
+font-size:17px;
+background-color:#5f5f5f;
+color:#f1f1f1;
+width:100%;
+padding:0;
+letter-spacing:1px;
+}
+.topnav a{
+padding:10px 15px 9px 15px !important;
+display:inline-block;
+}
+.topnav li a:hover{
+background-color:#000000;
+color:#ffffff;
+}
+.topnav li a.active {
+background-color:#4CAF50;
+color:#ffffff;
+}
+a.topnav-icons {
+width:52px;
+font-size:20px !important;
+padding-top:11px !important;
+padding-bottom:13px !important;
+}
+a.topnav-icons.fa-home {font-size:22px !important}
+a.topnav-localicons {
+font-size:20px !important;
+padding-top:6px !important;
+padding-bottom:12px !important;
+}
+i.fa-caret-down,i.fa-caret-up{width:10px}
+#sidenav h2 {
+font-size:21px;
+padding-left:16px;
+margin:-4px 0 4px 0;
+width:204px;
+}
+#sidenav a {padding:2px 1px 1px 16px}
+#sidenav a:hover {color:#000000}
+#sidenav a.active {background-color:#4CAF50;color:#ffffff}
+#sidenav .w3-closebtn {
+position:absolute;
+right:16px;
+top:0;
+}
+#leftmenuinner {
+position:fixed;
+top:0;
+padding-top:112px;
+padding-bottom:0;
+height:100%;
+width:220px;
+background-color:transparent;
+}
+#leftmenuinnerinner {
+height:100%;
+width:100%;
+overflow-y:scroll;
+overflow-x:hidden;
+padding-top:20px;
+}
+#main {padding:16px}
+#mainLeaderboard {height:90px}
+#right {text-align:center;padding:16px 16px 0 0}
+#right a {text-decoration:none}
+#right a:hover {text-decoration:underline}
+#skyscraper {min-height:600px}
+.sidesection {margin-bottom:32px;}
+.bottomad {padding:0 16px 16px 0;float:left;width:auto;}
+.footer a {text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+#nav_tutorials,#nav_references,#nav_examples{-webkit-overflow-scrolling:touch;overflow:auto;}
+#nav_tutorials::-webkit-scrollbar,#nav_references::-webkit-scrollbar,#nav_examples::-webkit-scrollbar {width: 12px;}
+#nav_tutorials::-webkit-scrollbar-track,#nav_references::-webkit-scrollbar-track,#nav_examples::-webkit-scrollbar-track {background:#555555;}
+#nav_tutorials::-webkit-scrollbar-thumb,#nav_references::-webkit-scrollbar-thumb,#nav_examples::-webkit-scrollbar-thumb {background: #999999;}
+.w3-dropnav {
+display:none;
+letter-spacing:0;
+margin-top:44px;
+}
+.w3-dropnav .w3-closebtn {
+padding:0 16px 16px 16px !important;
+position:absolute;
+right:0;
+}
+.w3-dropnav a{display:block;padding:2px 0!important}
+.w3-dropnav a:hover{background-color:transparent;color:#fff;text-decoration:underline!important}
+.nextprev a {font-size:17px;border:1px solid #cccccc;}
+.nextprev a:link,.nextprev a:visited {background-color:#ffffff;color:#000000;}
+.nextprev a.w3-right {background-color:#4CAF50;color:#ffffff;border-color:#4CAF50}
+.w3-theme {color:#fff !important;background-color:#73AD21 !important;background-color:#4CAF50 !important}
+.w3-theme-border {border-color:#4CAF50 !important}
+.fa-facebook-square,.fa-twitter-square,.fa-google-plus-square {padding:0 8px;}
+.fa-facebook-square:hover, .fa-thumbs-o-up:hover {color:#3B5998;}
+.fa-twitter-square:hover {color:#55acee;}
+.fa-google-plus-square:hover {color:#dd4b39;}
+#google_translate_element img {margin-bottom:-1px;}
+#googleSearch {color:#000000;}
+#googleSearch a {padding:0 !important;}
+.searchdiv {max-width:400px;margin:auto;text-align:left;font-size:16px}
+div.cse .gsc-control-cse, div.gsc-control-cse {background-color:transparent;border:none;padding:6px;margin:0px}
+td.gsc-search-button input.gsc-search-button {background-color:#4CAF50;border-color:#4CAF50}
+td.gsc-search-button input.gsc-search-button:hover {background-color:#46a049;}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button {
+box-sizing:content-box; line-height:normal;}
+.gsc-tabsArea div {overflow:visible;}
+/*"nullstille" w3css:*/
+.w3-main{transition:margin-left 0s;}
+.w3-sidenav a {transition:background-color 0s;}
+@media screen and (max-width:601px){.w3-navbar li a{display:inline-block}.w3-navbar li a:first-child{padding:8px 16px}.w3-dropnav a{display:block;}}
+@media screen and (max-width:600px){
+  .w3-navbar{text-align:left}
+  .w3-navbar li:not(.w3-opennav){float:left;width:auto!important;}
+  .w3-navbar li.w3-right {float: right!important;}
+}
+/*"nullstilling" slutt*/
+@media (min-width:1675px) {
+#main {width:79%}
+#right {width:21%}
+}
+@media (max-width:992px) {
+.top {height:100px}
+.top img {display:block;margin:auto;}
+.top .w3schools-logo {position:relative;top:0;width:100%;text-align:center;margin:auto}
+.toptext {width:100%;text-align:center}
+#sidenav {width:260px;}
+#sidenav h2 {font-size:26px;width:100%;}
+#sidenav a {padding:3px 2px 3px 24px;font-size:17px}
+#leftmenuinner {
+box-shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+overflow:auto;
+-webkit-overflow-scrolling:touch;
+height:100%;
+position:relative;
+width:auto;
+padding-top:0;
+background-color:#f1f1f1;
+}
+#leftmenuinnerinner {overflow-y:scroll}
+.bottomad {float:none;text-align:center}
+#skyscraper {min-height:60px}
+}
+@media screen and (max-width:600px) {
+.top {height:68px}
+.toptext {display:none}
+}
+@font-face {
+font-family:'fontawesome';
+src: url('../lib/fonts/fontawesome.eot?14663396');
+src:url('../lib/fonts/fontawesome.eot?14663396#iefix') format('embedded-opentype'),
+url('../lib/fonts/fontawesome.woff?14663396') format('woff'),
+url('../lib/fonts/fontawesome.ttf?14663396') format('truetype'),
+url('../lib/fonts/fontawesome.svg?14663396#fontawesome') format('svg');
+font-weight:normal;
+font-style:normal;
+}
+.fa {
+display:inline-block;
+font:normal normal normal 14px/1 FontAwesome;
+font-size:inherit;
+text-rendering:auto;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+transform:translate(0, 0);
+}
+.fa-2x {
+ font-size:2em;
+}
+.fa-home:before {content:'\e800';}
+.fa-globe:before {content:'\e801';}
+.fa-search:before {content:'\e802'; }
+.fa-thumbs-o-up:before {content:'\e803';}
+.fa-left-open:before {content:'\e804';}
+.fa-right-open:before {content:'\e805';}
+.fa-facebook-square:before {content:'\e806';}
+.fa-google-plus-square:before {content:'\e807';}
+.fa-twitter-square:before {content:'\e808';}
+.fa-caret-down:before {content:'\e809';}
+.fa-caret-up:before {content:'\e80a';}
+span.marked, span.deprecated {
+ color:#e80000;
+ background-color:transparent;
+}
+.intro {font-size:16px}
+.w3-btn, .w3-btn:link, .w3-btn:visited {color:#FFFFFF;background-color:#4CAF50}
+a.w3-btn[href*="exercise.asp"] {margin:10px 5px 0 0}
+a.btnplayit,a.btnplayit:link,a.btnplayit:visited {background-color:#FFAD33;padding:1px 10px 2px 10px}
+a.btnplayit:hover,a.btnplayit:active {background-color:#ffffff;color:#FFAD33}
+a.btnsmall:link,a.btnsmall:visited,a.btnsmall:active,a.btnsmall:hover {
+float:right;padding:1px 10px 2px 10px;font:15px Verdana, sans-serif}
+a.btnsmall:active,a.btnsmall:hover {color:#4CAF50;background-color:#ffffff}
+@media screen and (max-width:700px) {
+#mainLeaderboard {height:60px}
+#div-gpt-ad-1422003450156-0 {float:none;margin-left:auto;margin-right:auto}
+#div-gpt-ad-1422003450156-3 {float:none;margin-left:auto;margin-right:auto}
+}
+@media (max-width:1600px) {#topnav ul:nth-of-type(1) li:nth-of-type(16){display:none;}}
+@media (max-width:1500px) {#topnav ul:nth-of-type(1) li:nth-of-type(12){display:none;}}
+@media (max-width:1410px) {#topnav ul:nth-of-type(1) li:nth-of-type(11){display:none;}}
+@media (max-width:1350px) {#topnav ul:nth-of-type(1) li:nth-of-type(10){display:none;}}
+@media (max-width:1230px) {#topnav ul:nth-of-type(1) li:nth-of-type(9){display:none;}}
+@media (max-width:1140px) {#topnav ul:nth-of-type(1) li:nth-of-type(8){display:none;}}
+@media (max-width:1000px) {#topnav ul:nth-of-type(1) li:nth-of-type(7){display:none;}}
+@media (max-width:992px) {#topnav ul:nth-of-type(1) li:nth-of-type(6){display:none;}}
+@media (max-width:930px) {#topnav ul:nth-of-type(1) li:nth-of-type(17){display:none;}}
+@media (max-width:800px) {#topnav ul:nth-of-type(1) li:nth-of-type(18){display:none;}}
+@media (max-width:650px) {#topnav ul:nth-of-type(1) li:nth-of-type(5){display:none;} #topnav ul:nth-of-type(1) li:nth-of-type(15){display:none;}}
+@media (max-width:460px) {#topnav ul:nth-of-type(1) li:nth-of-type(4){display:none;}}
+@media (max-width:400px) {#topnav ul:nth-of-type(1) li:nth-of-type(3){display:none;}}
+@media (max-width:320px) {#topnav ul:nth-of-type(2) li:nth-of-type(1){display:none;}}
+
+.w3-note{background-color:#ffffcc;border-left:6px solid #ffeb3b}
+.w3-warning{background-color:#ffdddd;border-left:6px solid #f44336}
+.w3-info{background-color:#ddffdd;border-left:6px solid #4CAF50}
+</style>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-3855518-1', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+<!-- Ezoic Ad Testing Code-->
+
+<!-- Ezoic Ad Testing Code-->
+<!-- EZOIC_REMOVE_BEGIN -->
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+gads.src = 'https://www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+<script type='text/javascript'>
+// GPT slots
+var gptAdSlots = [];
+googletag.cmd.push(function() {
+var leaderMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], [320, 50]).
+// Vertical Tablet ad
+addSize([480, 0], [468, 60]).
+// Horizontal Tablet
+addSize([750, 0], [728, 90]).
+// Small Desktop
+addSize([993, 0], [468, 60]).
+// Normal Desktop
+addSize([1135, 0], [728, 90]).
+// Large Desktop and bigger ad
+addSize([1425, 0], [[728, 90], [970, 90]]).build();
+gptAdSlots[0] = googletag.defineSlot('/16833175/MainLeaderboard', [[728, 90], [970, 90]], 'div-gpt-ad-1422003450156-2').
+defineSizeMapping(leaderMapping).addService(googletag.pubads());
+var skyMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], [320, 50]).
+// Tablet ad
+addSize([975, 0], [120, 600]).
+// Desktop
+addSize([1135, 0], [160, 600]).
+// Large Desktop
+addSize([1675, 0], [[160, 600], [300, 600], [300, 1050]]).build();
+gptAdSlots[1] = googletag.defineSlot('/16833175/WideSkyScraper', [[160, 600], [300, 600], [300, 1050]], 'div-gpt-ad-1422003450156-5').
+defineSizeMapping(skyMapping).addService(googletag.pubads());
+var stickyMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], []).
+// Tablet ad
+addSize([975, 0], [120, 600]).
+// Desktop
+addSize([1135, 0], [160, 600]).
+// Large Desktop
+addSize([1675, 0], [[160, 600], [300, 600], [300, 250]]).build();
+gptAdSlots[4] = googletag.defineSlot('/16833175/StickySkyScraper', [[300, 600], [120, 600], [300, 250], [160, 600]], 'div-gpt-ad-1472547360578-0').
+defineSizeMapping(stickyMapping).addService(googletag.pubads());
+var bmrMapping = googletag.sizeMapping().
+// Smaller
+addSize([0, 0], [[300, 250], [336, 280]]).
+// Large Desktop
+addSize([1240, 0], [[300, 250], [336, 280], [970, 250]]).build();
+gptAdSlots[2] = googletag.defineSlot('/16833175/BottomMediumRectangle', [[300, 250], [336, 280], [970, 250]], 'div-gpt-ad-1422003450156-0').
+defineSizeMapping(bmrMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+var rbmrMapping = googletag.sizeMapping().
+// Smaller
+addSize([0, 0], []).
+// Large Desktop
+addSize([975, 0], [[300, 250], [336, 280]]).build();
+gptAdSlots[3] = googletag.defineSlot('/16833175/RightBottomMediumRectangle', [[300, 250], [336, 280]], 'div-gpt-ad-1422003450156-3').
+defineSizeMapping(rbmrMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+googletag.pubads().setTargeting("content",(function () {
+  var folder = location.pathname;
+  folder = folder.replace("/", "");
+  folder = folder.substr(0, folder.indexOf("/"));
+  return folder;
+})()
+);
+googletag.enableServices();
+});
+</script>
+<!-- EZOIC_REMOVE_END -->
+<script type='text/javascript'>
+var stickyadstatus = "";
+function fix_stickyad() {
+  var elem = document.getElementById("stickyadcontainer");
+  if (!elem) {return false;}
+  if (document.getElementById("skyscraper")) {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("skyscraper"), "width").replace("px", ""));
+    }
+  else {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("right"), "width").replace("px", ""));
+  }
+  elem.style.width = skyWidth + "px";
+  if (window.innerWidth <= 992) {
+    elem.style.position = "";
+    elem.style.top = stickypos + "px";
+    return false;
+  }
+  var stickypos = document.getElementById("stickypos").offsetTop;
+  var docTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  var adHeight = Number(w3_getStyleValue(elem, "height").replace("px", ""));
+  if (stickyadstatus == "") {
+    if ((stickypos - docTop) < 60) {
+      elem.style.position = "fixed";
+      elem.style.top = "60px";
+      stickyadstatus = "sticky";
+    }
+  } else {
+    if ((docTop + 60) - stickypos < 0) {
+      elem.style.position = "";
+      elem.style.top = stickypos + "px";
+      stickyadstatus = "";
+    }
+  }
+  if (stickyadstatus == "sticky") {
+    if ((docTop + adHeight + 60) > document.getElementById("footer").offsetTop) {
+      elem.style.position = "absolute";
+      elem.style.top = (document.getElementById("footer").offsetTop - adHeight) + "px";
+    } else {
+        elem.style.position = "fixed";
+        elem.style.top = "60px";
+        stickyadstatus = "sticky";
+    }
+  }
+}
+function w3_getStyleValue(elmnt,style) {
+  if (window.getComputedStyle) {
+    return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+  } else {
+    return elmnt.currentStyle[style];
+  }
+}
+</script>
+
+<style>
+.notsupported,.notsupported:hover,.notsupported:active,.notsupported:visited,.notsupported:link {
+  color:rgb(197,128,128)
+}
+.html5badge {
+background-image:url('/images/html5_badge20.png');
+background-repeat:no-repeat;
+background-position:right;
+}
+</style>
+<link rel='canonical' href='https://www.w3schools.com/tags/default.asp' />
+<script data-cfasync="false" type="text/javascript">window.google_analytics_uacct = "UA-80950036-41";</script>
+<script data-cfasync="false" type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['e._setAccount', 'UA-80950036-41']);
+_gaq.push(['f._setAccount', 'UA-38339005-1']);
+_gaq.push(['e._setDomainName', 'w3schools.com']);
+_gaq.push(['f._setDomainName', 'w3schools.com']);
+_gaq.push(['e._setCustomVar',1,'template','old_site_gc',3]);
+_gaq.push(['e._setCustomVar',2,'t','126',3]);
+_gaq.push(['e._setCustomVar',3,'rid','0',2]);
+_gaq.push(['e._setCustomVar',4,'bra','mod7',3]);
+_gaq.push(['f._setSampleRate', '5']);
+_gaq.push(['e._setSampleRate', '5']);
+_gaq.push(['e._setAllowAnchor',true]);
+_gaq.push(['e._setSiteSpeedSampleRate', 10]);
+_gaq.push(['f._setCustomVar',1,'template','old_site_gc',3]);
+_gaq.push(['f._setCustomVar',2,'domain','w3schools.com',3]);
+_gaq.push(['f._setSiteSpeedSampleRate', 20]);
+_gaq.push(['e._trackPageview']);
+_gaq.push(['f._trackPageview']);
+
+
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<script type="text/javascript">var ezouid = "177315616";</script><base href="https://www.w3schools.com/tags/default.asp"><script type='text/javascript'>
+var ezoTemplate = 'old_site_gc';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script><!-- START EZHEAD -->
+<script type='text/javascript'>
+var soc_app_id = '0';
+var did = 34890;
+var ezdomain = 'w3schools.com';
+var ezoicSearchable = 1;
+</script>
+<!--{jquery}-->
+<!-- END EZHEAD -->
+<script type="text/javascript" data-cfasync="false">var _ezaq = {"ab_test_id":"mod7","ab_test_val":"","adgroup_rank_id":-1,"browser":"Chrome","browser_version":56,"country":"GB","device_height":528,"device_width":1280,"domain_id":34890,"engaged_time_visit":99,"forensiq_score":-1,"form_factor_id":1,"ip":"137.222.114.247","landing_page_url":"http://www.w3schools.com/tags","os":"Windows","page_ad_positions":"","page_view_id":"7555ad58-46ad-4326-664a-cdcf09cde7ef","pv_event_count":0,"referrer_id":0,"referring_domain":"w3schools.com","region":"us-east-1","serverid":"54.234.241.96:28986","t_epoch":1488271795,"template_id":126,"time_on_site_visit":616,"url":"https://www.w3schools.com/tags/default.asp","user_agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36","user_id":177315616,"visit_id":1717698762,"visit_uuid":"edb02112-8ed6-45e9-71b3-48d643003095"};var _ezExtraQueries = "&ez_orig=1";</script><script data-cfasync='false' type="text/javascript" src="/ezoic/impt.js?cb=149-3&v=10" async></script></head>
+<body>
+<div class='w3-container top'>
+  <a class='w3schools-logo' href='//www.w3schools.com'>w3schools<span class='dotcom'>.com</span></a>
+  <div class='w3-right w3-hide-small w3-wide toptext'>THE WORLD'S LARGEST WEB DEVELOPER SITE</div>
+</div>
+
+<div style='display:none;position:absolute;z-index:4;right:52px;height:44px;background-color:#5f5f5f;letter-spacing:normal;' id='googleSearch'>
+  <div class='gcse-search'></div>
+</div>
+<div style='display:none;position:absolute;z-index:3;right:111px;height:44px;background-color:#5f5f5f;text-align:right;padding-top:9px;' id='google_translate_element'></div>
+
+<div class='w3-card-2 w3-slim topnav' id='topnav'>
+  <div style="overflow:auto;">
+    <ul class="w3-navbar w3-left" style="width:100%;overflow:hidden;height:44px">
+      <li><a href='javascript:void(0);' class='topnav-localicons w3-hide-large w3-left' onclick='open_menu()' title='Menu'>&#9776;</a></li>
+      <li><a href='/default.asp' class='topnav-icons fa fa-home w3-left' title='Home'></a></li>
+      <li><a href='/html/default.asp' title='HTML Tutorial'>HTML</a></li>
+      <li><a href='/css/default.asp' title='CSS Tutorial'>CSS</a></li>
+      <li><a href='/js/default.asp' title='JavaScript Tutorial'>JAVASCRIPT</a></li>
+      <li><a href='/sql/default.asp' title='SQL Tutorial'>SQL</a></li>
+      <li><a href='/php/default.asp' title='PHP Tutorial'>PHP</a></li>
+      <li><a href='/bootstrap/default.asp' title='Bootstrap Tutorial'>BOOTSTRAP</a></li>
+      <li><a href='/jquery/default.asp' title='jQuery Tutorial'>JQUERY</a></li>
+      <li><a href='/angular/default.asp' title='Angular Tutorial'>ANGULAR</a></li>
+      <li><a href='/w3css/default.asp' title='W3.CSS Tutorial'>W3.CSS</a></li>
+      <li><a href='/xml/default.asp' title='XML Tutorial'>XML</a></li>
+      <li><a id='topnavbtn_tutorials' href='javascript:void(0);' onclick='w3_open_nav("tutorials")' title='Tutorials'>MORE <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a></li>
+      <li class="w3-right"><a href='javascript:void(0);' class='topnav-icons fa w3-right' onclick='open_search(this)' title='Search W3Schools'>&#xe802;</a></li>
+      <li class="w3-right"><a href='javascript:void(0);' class='topnav-icons fa w3-right' onclick='open_translate(this)' title='Translate W3Schools'>&#xe801;</a></li>
+      <li class="w3-right"><a href='/forum/default.asp'>FORUM</a></li>
+      <li class="w3-right"><a id='topnavbtn_examples' href='javascript:void(0);' onclick='w3_open_nav("examples")' title='Examples'>EXAMPLES <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a></li>
+      <li class="w3-right"><a id='topnavbtn_references' href='javascript:void(0);' onclick='w3_open_nav("references")' title='References'>REFERENCES <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a></li>
+    </ul>
+    <div id='nav_tutorials' class='w3-dropnav w3-card-2'>
+      <span onclick='w3_close_nav("tutorials")' class='w3-closebtn w3-xlarge w3-hover-text-white' style="right:12px;">&times;</span>
+      <div class='w3-row-padding w3-padding-xxlarge'>
+        <div class='w3-col l3 m6'>
+          <h3>HTML and CSS</h3>
+          <a href='/html/default.asp'>Learn HTML</a>
+          <a href='/css/default.asp'>Learn CSS</a>
+          <a href='/w3css/default.asp'>Learn W3.CSS</a>
+          <a href='/colors/default.asp'>Learn Colors</a>
+          <a href='/bootstrap/default.asp'>Learn Bootstrap</a>
+          <a href='/graphics/default.asp'>Learn Graphics</a>
+          <a href='/icons/default.asp'>Learn Icons</a>
+          <a href='/howto/default.asp'>Learn How To</a>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>JavaScript</h3>
+          <a href='/js/default.asp'>Learn JavaScript</a>
+          <a href='/w3js/default.asp'>Learn W3.JS</a>
+          <a href='/jquery/default.asp'>Learn jQuery</a>
+          <a href='/jquerymobile/default.asp'>Learn jQueryMobile</a>
+          <a href='/appml/default.asp'>Learn AppML</a>
+          <a href='/angular/default.asp'>Learn AngularJS</a>
+          <a href="/js/js_json_intro.asp">Learn JSON</a>
+          <a href='/js/js_ajax_intro.asp'>Learn AJAX</a>
+          <div class="w3-hide-small"><br><br></div>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>Server Side</h3>
+          <a href='/sql/default.asp'>Learn SQL</a>
+          <a href='/php/default.asp'>Learn PHP</a>
+          <a href='/asp/default.asp'>Learn ASP</a>
+          <h3>Web Building</h3>
+          <a href="/w3css/w3css_templates.asp">Web Templates</a>
+          <a href='/browsers/default.asp'>Web Statistics</a>
+          <a href='/cert/default.asp'>Web Certificates</a>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>XML</h3>
+          <a href='/xml/default.asp'>Learn XML</a>
+          <a href='/xml/ajax_intro.asp'>Learn XML AJAX</a>
+          <a href="/xml/dom_intro.asp">Learn XML DOM</a>
+          <a href='/xml/xml_dtd_intro.asp'>Learn XML DTD</a>
+          <a href='/xml/schema_intro.asp'>Learn XML Schema</a>
+          <a href='/xml/xsl_intro.asp'>Learn XSLT</a>
+          <a href='/xml/xpath_intro.asp'>Learn XPath</a>
+          <a href='/xml/xquery_intro.asp'>Learn XQuery</a>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div id='nav_references' class='w3-dropnav w3-card-2'>
+      <span onclick='w3_close_nav("references")' class='w3-closebtn w3-xlarge w3-hover-text-white' style="right:12px;">&times;</span>
+      <div class='w3-row-padding w3-padding-xxlarge'>
+        <div class='w3-col m4'>
+          <h3>HTML</h3>
+          <a href='/tags/default.asp'>HTML Tag Reference</a>
+          <a href='/tags/ref_eventattributes.asp'>HTML Event Reference</a>
+          <a href='/colors/default.asp'>HTML Color Reference</a>
+          <a href='/tags/ref_attributes.asp'>HTML Attribute Reference</a>
+          <a href='/tags/ref_canvas.asp'>HTML Canvas Reference</a>
+          <a href='/graphics/svg_reference.asp'>HTML SVG Reference</a>
+          <a href='/graphics/google_maps_reference.asp'>Google Maps Reference</a>
+          <h3>CSS</h3>
+          <a href='/cssref/default.asp'>CSS Reference</a>
+          <a href='/cssref/css_selectors.asp'>CSS Selector Reference</a>
+          <a href='/w3css/w3css_references.asp'>W3.CSS Reference</a>
+          <a href='/bootstrap/bootstrap_ref_all_classes.asp'>Bootstrap Reference</a>
+          <a href='/icons/icons_reference.asp'>Icon Reference</a>
+        </div>
+        <div class='w3-col m4'>
+          <h3>JavaScript</h3>
+          <a href='/jsref/default.asp'>JavaScript Reference</a>
+          <a href='/jsref/default.asp'>HTML DOM Reference</a>
+          <a href='/w3js/w3js_references.asp'>W3.JS Reference</a>
+          <a href='/jquery/jquery_ref_selectors.asp'>jQuery Reference</a>
+          <a href='/jquerymobile/jquerymobile_ref_data.asp'>jQuery Mobile Reference</a>
+          <a href='/angular/angular_ref_directives.asp'>AngularJS Reference</a>
+          <h3>XML</h3>
+          <a href='/xml/dom_nodetype.asp'>XML Reference</a>
+          <a href='/xml/dom_http.asp'>XML Http Reference</a>
+          <a href='/xml/xsl_elementref.asp'>XSLT Reference</a>
+          <a href='/xml/schema_elements_ref.asp'>XML Schema Reference</a>
+        </div>
+        <div class='w3-col m4'>
+          <h3>Charsets</h3>
+          <a href='/charsets/default.asp'>HTML Character Sets</a>
+          <a href='/charsets/ref_html_ascii.asp'>HTML ASCII</a>
+          <a href='/charsets/ref_html_ansi.asp'>HTML ANSI</a>
+          <a href='/charsets/ref_html_ansi.asp'>HTML Windows-1252</a>
+          <a href='/charsets/ref_html_8859.asp'>HTML ISO-8859-1</a>
+          <a href='/charsets/ref_html_symbols.asp'>HTML Symbols</a>
+          <a href='/charsets/ref_html_utf8.asp'>HTML UTF-8</a>
+          <h3>Server Side</h3>
+          <a href='/php/php_ref_array.asp'>PHP Reference</a>
+          <a href='/sql/sql_quickref.asp'>SQL Reference</a>
+          <a href='/asp/asp_ref_response.asp'>ASP Reference</a>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div id='nav_examples' class='w3-dropnav w3-card-2'>
+      <span onclick='w3_close_nav("examples")' class='w3-closebtn w3-xlarge w3-hover-text-white' style="right:12px;">&times;</span>
+      <div class='w3-row-padding w3-padding-xxlarge'>
+        <div class='w3-col l3 m6'>
+          <h3>HTML/CSS</h3>
+          <a href='/html/html_examples.asp'>HTML Examples</a>
+          <a href='/css/css_examples.asp'>CSS Examples</a>
+          <a href='/w3css/w3css_examples.asp'>W3.CSS Examples</a>
+          <a href='/w3css/w3css_templates.asp'>W3.CSS Templates</a>
+          <a href='/bootstrap/bootstrap_examples.asp'>Bootstrap Examples</a>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>JavaScript</h3>
+          <a href='/js/js_examples.asp' target='_top'>JavaScript Examples</a>
+          <a href='/js/js_dom_examples.asp' target='_top'>HTML DOM Examples</a>
+          <a href='/w3js/w3js_examples.asp'>W3.JS Examples</a>
+          <a href='/jquery/jquery_examples.asp' target='_top'>jQuery Examples</a>
+          <a href='/jquerymobile/jquerymobile_examples.asp' target='_top'>jQuery Mobile Examples</a>
+          <a href='/angular/angular_examples.asp' target='_top'>AngularJS Examples</a>
+          <a href='/js/js_ajax_examples.asp' target='_top'>AJAX Examples</a>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>Server Side</h3>
+          <a href='/php/php_examples.asp' target='_top'>PHP Examples</a>
+          <a href="/asp/asp_examples.asp" target="_top">ASP Examples</a>
+          <h3>XML</h3>
+          <a href='/xml/xml_examples.asp' target='_top'>XML Examples</a>
+          <a href='/xml/xsl_examples.asp' target='_top'>XSLT Examples</a>
+          <a href='/xml/xpath_examples.asp' target='_top'>XPath Examples</a>
+          <a href='/xml/schema_example.asp' target='_top'>XML Schema Examples</a>
+          <a href='/graphics/svg_examples.asp' target='_top'>SVG Examples</a>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>Quizzes</h3>
+          <a href='/quiztest/quiztest.asp?Qtest=HTML' target='_top'>HTML Quiz</a>
+          <a href='/quiztest/quiztest.asp?Qtest=CSS' target='_top'>CSS Quiz</a>
+          <a href='/quiztest/quiztest.asp?Qtest=JavaScript' target='_top'>JavaScript Quiz</a>
+          <a href='/quiztest/quiztest.asp?Qtest=Bootstrap' target='_top'>Bootstrap Quiz</a>
+          <a href='/quiztest/quiztest.asp?Qtest=jQuery' target='_top'>jQuery Quiz</a>
+          <a href='/quiztest/quiztest.asp?Qtest=PHP' target='_top'>PHP Quiz</a>
+          <a href="/quiztest/quiztest.asp?Qtest=SQL" target="_top">SQL Quiz</a>
+          <a href='/quiztest/quiztest.asp?Qtest=XML' target='_top'>XML Quiz</a>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+<div class='w3-sidenav w3-collapse w3-slim' id='sidenav'>
+  <div id='leftmenuinner'>
+    <div class='w3-light-grey' id='leftmenuinnerinner'>
+      <a href='javascript:void(0)' onclick='close_menu()' class='w3-closebtn w3-hide-large w3-large' style='padding:3px 12px;'>&times;</a>
+<h2 class="left"><span class="left_h2">HTML</span> Reference</h2>
+<a target="_top" href="default.asp">HTML by Alphabet</a>
+<a target="_top" href="ref_byfunc.asp">HTML by Category</a>
+<a target="_top" href="ref_attributes.asp">HTML Attributes</a>
+<a target="_top" href="ref_standardattributes.asp">HTML Global Attributes</a>
+<a target="_top" href="ref_eventattributes.asp">HTML Events</a>
+<a target="_top" href="ref_colornames.asp">HTML Colors</a>
+<a target="_top" href="ref_canvas.asp">HTML Canvas</a>
+<a target="_top" href="ref_av_dom.asp">HTML Audio/Video</a>
+<a target="_top" href="ref_charactersets.asp">HTML Character Sets</a>
+<a target="_top" href="ref_html_dtd.asp">HTML Doctypes</a>
+<a target="_top" href="ref_urlencode.asp">HTML URL Encode</a>
+<a target="_top" href="ref_language_codes.asp">HTML Language Codes</a>
+<a target="_top" href="ref_country_codes.asp">HTML Country Codes</a>
+<a target="_top" href="ref_httpmessages.asp">HTTP Messages</a>
+<a target="_top" href="ref_httpmethods.asp">HTTP Methods</a>
+<a target="_top" href="ref_pxtoemconversion.asp">PX to EM Converter</a>
+<a target="_top" href="ref_keyboardshortcuts.asp">Keyboard Shortcuts</a>
+<br>
+<div class="notranslate">
+<h2 class="left"><span class="left_h2">HTML</span> Tags</h2>
+<a target="_top" href="tag_comment.asp">&lt;!--&gt;</a>
+<a target="_top" href="tag_doctype.asp">&lt;!DOCTYPE&gt;</a>
+<a target="_top" href="tag_a.asp">&lt;a&gt;</a>
+<a target="_top" href="tag_abbr.asp">&lt;abbr&gt;</a>
+<a target="_top" href="tag_acronym.asp">&lt;acronym&gt;</a>
+<a target="_top" href="tag_address.asp">&lt;address&gt;</a>
+<a target="_top" href="tag_applet.asp">&lt;applet&gt;</a>
+<a target="_top" href="tag_area.asp">&lt;area&gt;</a>
+<a target="_top" href="tag_article.asp">&lt;article&gt;</a>
+<a target="_top" href="tag_aside.asp">&lt;aside&gt;</a>
+<a target="_top" href="tag_audio.asp">&lt;audio&gt;</a>
+<a target="_top" href="tag_b.asp">&lt;b&gt;</a>
+<a target="_top" href="tag_base.asp">&lt;base&gt;</a>
+<a target="_top" href="tag_basefont.asp">&lt;basefont&gt;</a>
+<a target="_top" href="tag_bdi.asp">&lt;bdi&gt;</a>
+<a target="_top" href="tag_bdo.asp">&lt;bdo&gt;</a>
+<a target="_top" href="tag_big.asp">&lt;big&gt;</a>
+<a target="_top" href="tag_blockquote.asp">&lt;blockquote&gt;</a>
+<a target="_top" href="tag_body.asp">&lt;body&gt;</a>
+<a target="_top" href="tag_br.asp">&lt;br&gt;</a>
+<a target="_top" href="tag_button.asp">&lt;button&gt;</a>
+<a target="_top" href="tag_canvas.asp">&lt;canvas&gt;</a>
+<a target="_top" href="tag_caption.asp">&lt;caption&gt;</a>
+<a target="_top" href="tag_center.asp">&lt;center&gt;</a>
+<a target="_top" href="tag_cite.asp">&lt;cite&gt;</a>
+<a target="_top" href="tag_code.asp">&lt;code&gt;</a>
+<a target="_top" href="tag_col.asp">&lt;col&gt;</a>
+<a target="_top" href="tag_colgroup.asp">&lt;colgroup&gt;</a>
+<a target="_top" href="tag_data.asp">&lt;data&gt;</a>
+<a target="_top" href="tag_datalist.asp">&lt;datalist&gt;</a>
+<a target="_top" href="tag_dd.asp">&lt;dd&gt;</a>
+<a target="_top" href="tag_del.asp">&lt;del&gt;</a>
+<a target="_top" href="tag_details.asp">&lt;details&gt;</a>
+<a target="_top" href="tag_dfn.asp">&lt;dfn&gt;</a>
+<a target="_top" href="tag_dialog.asp">&lt;dialog&gt;</a>
+<a target="_top" href="tag_dir.asp">&lt;dir&gt;</a>
+<a target="_top" href="tag_div.asp">&lt;div&gt;</a>
+<a target="_top" href="tag_dl.asp">&lt;dl&gt;</a>
+<a target="_top" href="tag_dt.asp">&lt;dt&gt;</a>
+<a target="_top" href="tag_em.asp">&lt;em&gt;</a>
+<a target="_top" href="tag_embed.asp">&lt;embed&gt;</a>
+<a target="_top" href="tag_fieldset.asp">&lt;fieldset&gt;</a>
+<a target="_top" href="tag_figcaption.asp">&lt;figcaption&gt;</a>
+<a target="_top" href="tag_figure.asp">&lt;figure&gt;</a>
+<a target="_top" href="tag_font.asp">&lt;font&gt;</a>
+<a target="_top" href="tag_footer.asp">&lt;footer&gt;</a>
+<a target="_top" href="tag_form.asp">&lt;form&gt;</a>
+<a target="_top" href="tag_frame.asp">&lt;frame&gt;</a>
+<a target="_top" href="tag_frameset.asp">&lt;frameset&gt;</a>
+<a target="_top" href="tag_hn.asp">&lt;h1&gt; - &lt;h6&gt;</a>
+<a target="_top" href="tag_head.asp">&lt;head&gt;</a>
+<a target="_top" href="tag_header.asp">&lt;header&gt;</a>
+<a target="_top" href="tag_hr.asp">&lt;hr&gt;</a>
+<a target="_top" href="tag_html.asp">&lt;html&gt;</a>
+<a target="_top" href="tag_i.asp">&lt;i&gt;</a>
+<a target="_top" href="tag_iframe.asp">&lt;iframe&gt;</a>
+<a target="_top" href="tag_img.asp">&lt;img&gt;</a>
+<a target="_top" href="tag_input.asp">&lt;input&gt;</a>
+<a target="_top" href="tag_ins.asp">&lt;ins&gt;</a>
+<a target="_top" href="tag_kbd.asp">&lt;kbd&gt;</a>
+<a target="_top" href="tag_keygen.asp">&lt;keygen&gt;</a>
+<a target="_top" href="tag_label.asp">&lt;label&gt;</a>
+<a target="_top" href="tag_legend.asp">&lt;legend&gt;</a>
+<a target="_top" href="tag_li.asp">&lt;li&gt;</a>
+<a target="_top" href="tag_link.asp">&lt;link&gt;</a>
+<a target="_top" href="tag_main.asp">&lt;main&gt;</a>
+<a target="_top" href="tag_map.asp">&lt;map&gt;</a>
+<a target="_top" href="tag_mark.asp">&lt;mark&gt;</a>
+<a target="_top" href="tag_menu.asp">&lt;menu&gt;</a>
+<a target="_top" href="tag_menuitem.asp">&lt;menuitem&gt;</a>
+<a target="_top" href="tag_meta.asp">&lt;meta&gt;</a>
+<a target="_top" href="tag_meter.asp">&lt;meter&gt;</a>
+<a target="_top" href="tag_nav.asp">&lt;nav&gt;</a>
+<a target="_top" href="tag_noframes.asp">&lt;noframes&gt;</a>
+<a target="_top" href="tag_noscript.asp">&lt;noscript&gt;</a>
+<a target="_top" href="tag_object.asp">&lt;object&gt;</a>
+<a target="_top" href="tag_ol.asp">&lt;ol&gt;</a>
+<a target="_top" href="tag_optgroup.asp">&lt;optgroup&gt;</a>
+<a target="_top" href="tag_option.asp">&lt;option&gt;</a>
+<a target="_top" href="tag_output.asp">&lt;output&gt;</a>
+<a target="_top" href="tag_p.asp">&lt;p&gt;</a>
+<a target="_top" href="tag_param.asp">&lt;param&gt;</a>
+<a target="_top" href="tag_picture.asp">&lt;picture&gt;</a>
+<a target="_top" href="tag_pre.asp">&lt;pre&gt;</a>
+<a target="_top" href="tag_progress.asp">&lt;progress&gt;</a>
+<a target="_top" href="tag_q.asp">&lt;q&gt;</a>
+<a target="_top" href="tag_rp.asp">&lt;rp&gt;</a>
+<a target="_top" href="tag_rt.asp">&lt;rt&gt;</a>
+<a target="_top" href="tag_ruby.asp">&lt;ruby&gt;</a>
+<a target="_top" href="tag_s.asp">&lt;s&gt;</a>
+<a target="_top" href="tag_samp.asp">&lt;samp&gt;</a>
+<a target="_top" href="tag_script.asp">&lt;script&gt;</a>
+<a target="_top" href="tag_section.asp">&lt;section&gt;</a>
+<a target="_top" href="tag_select.asp">&lt;select&gt;</a>
+<a target="_top" href="tag_small.asp">&lt;small&gt;</a>
+<a target="_top" href="tag_source.asp">&lt;source&gt;</a>
+<a target="_top" href="tag_span.asp">&lt;span&gt;</a>
+<a target="_top" href="tag_strike.asp">&lt;strike&gt;</a>
+<a target="_top" href="tag_strong.asp">&lt;strong&gt;</a>
+<a target="_top" href="tag_style.asp">&lt;style&gt;</a>
+<a target="_top" href="tag_sub.asp">&lt;sub&gt;</a>
+<a target="_top" href="tag_summary.asp">&lt;summary&gt;</a>
+<a target="_top" href="tag_sup.asp">&lt;sup&gt;</a>
+<a target="_top" href="tag_table.asp">&lt;table&gt;</a>
+<a target="_top" href="tag_tbody.asp">&lt;tbody&gt;</a>
+<a target="_top" href="tag_td.asp">&lt;td&gt;</a>
+<a target="_top" href="tag_textarea.asp">&lt;textarea&gt;</a>
+<a target="_top" href="tag_tfoot.asp">&lt;tfoot&gt;</a>
+<a target="_top" href="tag_th.asp">&lt;th&gt;</a>
+<a target="_top" href="tag_thead.asp">&lt;thead&gt;</a>
+<a target="_top" href="tag_time.asp">&lt;time&gt;</a>
+<a target="_top" href="tag_title.asp">&lt;title&gt;</a>
+<a target="_top" href="tag_tr.asp">&lt;tr&gt;</a>
+<a target="_top" href="tag_track.asp">&lt;track&gt;</a>
+<a target="_top" href="tag_tt.asp">&lt;tt&gt;</a>
+<a target="_top" href="tag_u.asp">&lt;u&gt;</a>
+<a target="_top" href="tag_ul.asp">&lt;ul&gt;</a>
+<a target="_top" href="tag_var.asp">&lt;var&gt;</a>
+<a target="_top" href="tag_video.asp">&lt;video&gt;</a>
+<a target="_top" href="tag_wbr.asp">&lt;wbr&gt;</a>
+</div>
+      <br><br>
+    </div>
+  </div>
+</div>
+<div class='w3-main w3-light-grey' id='belowtopnav' style='margin-left:220px;'>
+  <div class='w3-row w3-white'>
+    <div class='w3-col l10 m12' id='main'>
+      <!-- Ezoic - Leaderboard - top_of_page -->
+      <div id="ezoic-pub-ad-placeholder-103">
+        <div id='mainLeaderboard' style='overflow:hidden;'>
+          <!-- MainLeaderboard-->
+          <div id='div-gpt-ad-1422003450156-2'>
+            <script type='text/javascript'>googletag.cmd.push(function() { googletag.display('div-gpt-ad-1422003450156-2'); });</script>
+          </div>
+        </div>
+      </div>
+      <!-- End Ezoic - Leaderboard - top_of_page -->
+
+<h1>HTML <span class="color_h1">Element Reference</span></h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="/default.asp">&#10094; Home</a>
+<a class="w3-right w3-btn" href="ref_byfunc.asp">Next &#10095;</a>
+</div>
+<hr>
+
+<h2>HTML Tags Ordered Alphabetically</h2>
+<p class="html5badge" style="background-position:left;padding-left:20px;height:18px;">= New in HTML5.</p>
+<table class="w3-table-all notranslate">
+<tr>
+<th style="width:25%">Tag</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><a href="tag_comment.asp">&lt;!--...--&gt;</a></td>
+<td>Defines a comment</td>
+</tr>
+<tr>
+<td><a href="tag_doctype.asp">&lt;!DOCTYPE&gt;</a>&nbsp;</td>
+<td>Defines the document type</td>
+</tr>
+<tr>
+<td><a href="tag_a.asp">&lt;a&gt;</a></td>
+<td>Defines a hyperlink</td>
+</tr>
+<tr>
+<td><a href="tag_abbr.asp">&lt;abbr&gt;</a></td>
+<td>Defines an abbreviation or an acronym</td>
+</tr>
+<tr>
+<td><a href="tag_acronym.asp" class="notsupported">&lt;acronym&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5. Use &lt;abbr&gt; instead.<br></span>Defines an acronym</td>
+</tr>
+<tr>
+<td><a href="tag_address.asp">&lt;address&gt;</a></td>
+<td>Defines contact information for the author/owner of a document</td>
+</tr>
+<tr>
+<td><a href="tag_applet.asp" class="notsupported">&lt;applet&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5. Use &lt;embed&gt; or &lt;object&gt; instead.<br></span>Defines an embedded applet</td>
+</tr>
+<tr>
+<td><a href="tag_area.asp">&lt;area&gt;</a></td>
+<td>Defines an area inside an image-map</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_article.asp">&lt;article&gt;</a></td>
+<td>Defines an article</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_aside.asp">&lt;aside&gt;</a></td>
+<td>Defines content aside from the page content</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_audio.asp">&lt;audio&gt;</a></td>
+<td>Defines sound content</td>
+</tr>
+<tr>
+<td><a href="tag_b.asp">&lt;b&gt;</a></td>
+<td>Defines bold text</td>
+</tr>
+<tr>
+<td><a href="tag_base.asp">&lt;base&gt;</a></td>
+<td>Specifies the base URL/target for all relative URLs in a document</td>
+</tr>
+<tr>
+<td><a href="tag_basefont.asp" class="notsupported">&lt;basefont&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5. Use CSS instead.<br></span>Specifies a default color, size, and font for all text in a document</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_bdi.asp">&lt;bdi&gt;</a></td>
+<td>Isolates a part of text that might be formatted in a different direction
+from other text outside it</td>
+</tr>
+<tr>
+<td><a href="tag_bdo.asp">&lt;bdo&gt;</a></td>
+<td>Overrides the current text direction</td>
+</tr>
+<tr>
+<td><a href="tag_big.asp" class="notsupported">&lt;big&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5. Use CSS instead.<br></span>Defines big text</td>
+</tr>
+<tr>
+<td><a href="tag_blockquote.asp">&lt;blockquote&gt;</a></td>
+<td>Defines a section that is quoted from another source</td>
+</tr>
+<tr>
+<td><a href="tag_body.asp">&lt;body&gt;</a></td>
+<td>Defines the document's body</td>
+</tr>
+<tr>
+<td><a href="tag_br.asp">&lt;br&gt;</a></td>
+<td>Defines a single line break</td>
+</tr>
+<tr>
+<td><a href="tag_button.asp">&lt;button&gt;</a></td>
+<td>Defines a clickable button</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_canvas.asp">&lt;canvas&gt;</a></td>
+<td>Used to draw graphics, on the fly, via scripting (usually JavaScript)</td>
+</tr>
+<tr>
+<td><a href="tag_caption.asp">&lt;caption&gt;</a></td>
+<td>Defines a table caption</td>
+</tr>
+<tr>
+<td><a href="tag_center.asp" class="notsupported">&lt;center&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5. Use CSS instead.<br></span>Defines centered text</td>
+</tr>
+<tr>
+<td><a href="tag_cite.asp">&lt;cite&gt;</a></td>
+<td>Defines the title of a work</td>
+</tr>
+<tr>
+<td><a href="tag_code.asp">&lt;code&gt;</a></td>
+<td>Defines a piece of computer code</td>
+</tr>
+<tr>
+<td><a href="tag_col.asp">&lt;col&gt;</a></td>
+<td>Specifies column properties for each column within a &lt;colgroup&gt; element&nbsp;</td>
+</tr>
+<tr>
+<td><a href="tag_colgroup.asp">&lt;colgroup&gt;</a></td>
+<td>Specifies a group of one or more columns in a table for formatting</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_datalist.asp">&lt;datalist&gt;</a></td>
+<td>Specifies a list of pre-defined options for input controls</td>
+</tr>
+<tr>
+<td><a href="tag_dd.asp">&lt;dd&gt;</a></td>
+<td>Defines a description/value of a term in a description list</td>
+</tr>
+<tr>
+<td><a href="tag_del.asp">&lt;del&gt;</a></td>
+<td>Defines text that has been deleted from a document</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_details.asp">&lt;details&gt;</a></td>
+<td>Defines additional details that the user can view or hide</td>
+</tr>
+<tr>
+<td><a href="tag_dfn.asp">&lt;dfn&gt;</a></td>
+<td>Represents the defining instance of a term</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_dialog.asp">&lt;dialog&gt;</a></td>
+<td>Defines a dialog box or window</td>
+</tr>
+<tr>
+<td><a href="tag_dir.asp" class="notsupported">&lt;dir&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5. Use &lt;ul&gt; instead.<br></span>Defines a directory list</td>
+</tr>
+<tr>
+<td><a href="tag_div.asp">&lt;div&gt;</a></td>
+<td>Defines a section in a document</td>
+</tr>
+<tr>
+<td><a href="tag_dl.asp">&lt;dl&gt;</a></td>
+<td>Defines a description list</td>
+</tr>
+<tr>
+<td><a href="tag_dt.asp">&lt;dt&gt;</a></td>
+<td>Defines a term/name in a description list</td>
+</tr>
+<tr>
+<td><a href="tag_em.asp">&lt;em&gt;</a></td>
+<td>Defines emphasized text&nbsp;</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_embed.asp">&lt;embed&gt;</a></td>
+<td>Defines a container for an external (non-HTML) application</td>
+</tr>
+<tr>
+<td><a href="tag_fieldset.asp">&lt;fieldset&gt;</a></td>
+<td>Groups related elements in a form</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_figcaption.asp">&lt;figcaption&gt;</a></td>
+<td>Defines a caption for a &lt;figure&gt; element</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_figure.asp">&lt;figure&gt;</a></td>
+<td>Specifies self-contained content</td>
+</tr>
+<tr>
+<td><a href="tag_font.asp" class="notsupported">&lt;font&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5. Use CSS instead.<br></span>Defines font, color, and size for text</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_footer.asp">&lt;footer&gt;</a></td>
+<td>Defines a footer for a document or section</td>
+</tr>
+<tr>
+<td><a href="tag_form.asp">&lt;form&gt;</a></td>
+<td>Defines an HTML form for user input</td>
+</tr>
+<tr>
+<td><a href="tag_frame.asp" class="notsupported">&lt;frame&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5.<br></span>Defines a window (a frame) in a frameset</td>
+</tr>
+<tr>
+<td><a href="tag_frameset.asp" class="notsupported">&lt;frameset&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5.<br></span>Defines a set of frames</td>
+</tr>
+<tr>
+<td><a href="tag_hn.asp">&lt;h1&gt; to &lt;h6&gt;</a></td>
+<td> Defines HTML headings</td>
+</tr>
+<tr>
+<td><a href="tag_head.asp">&lt;head&gt;</a></td>
+<td>Defines information about the document</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_header.asp">&lt;header&gt;</a></td>
+<td>Defines a header for a document or section</td>
+</tr>
+<tr>
+<td><a href="tag_hr.asp">&lt;hr&gt;</a></td>
+<td> Defines a thematic change in the content</td>
+</tr>
+<tr>
+<td><a href="tag_html.asp">&lt;html&gt;</a></td>
+<td>Defines the root of an HTML document</td>
+</tr>
+<tr>
+<td><a href="tag_i.asp">&lt;i&gt;</a></td>
+<td>Defines a part of text in an alternate voice or mood</td>
+</tr>
+<tr>
+<td><a href="tag_iframe.asp">&lt;iframe&gt;</a></td>
+<td>Defines an inline frame</td>
+</tr>
+<tr>
+<td><a href="tag_img.asp">&lt;img&gt;</a></td>
+<td>Defines an image</td>
+</tr>
+<tr>
+<td><a href="tag_input.asp">&lt;input&gt;</a></td>
+<td>Defines an input control</td>
+</tr>
+<tr>
+<td><a href="tag_ins.asp">&lt;ins&gt;</a></td>
+<td>Defines a text that has been inserted into a document</td>
+</tr>
+<tr>
+<td><a href="tag_kbd.asp">&lt;kbd&gt;</a></td>
+<td>Defines keyboard input</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_keygen.asp">&lt;keygen&gt;</a></td>
+<td>Defines a key-pair generator field (for forms)</td>
+</tr>
+<tr>
+<td><a href="tag_label.asp">&lt;label&gt;</a></td>
+<td>Defines a label&nbsp;for an &lt;input&gt; element</td>
+</tr>
+<tr>
+<td><a href="tag_legend.asp">&lt;legend&gt;</a></td>
+<td>Defines a caption for a &lt;fieldset&gt; element</td>
+</tr>
+<tr>
+<td><a href="tag_li.asp">&lt;li&gt;</a></td>
+<td>Defines a list item</td>
+</tr>
+<tr>
+<td><a href="tag_link.asp">&lt;link&gt;</a></td>
+<td>Defines the relationship between a document and an external resource (most
+used to link to style sheets)</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_main.asp">&lt;main&gt;</a></td>
+<td>Specifies the main content of a document</td>
+</tr>
+<tr>
+<td><a href="tag_map.asp">&lt;map&gt;</a></td>
+<td>Defines a client-side image-map</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_mark.asp">&lt;mark&gt;</a></td>
+<td>Defines marked/highlighted text</td>
+</tr>
+<tr>
+<td><a href="tag_menu.asp">&lt;menu&gt;</a></td>
+<td>Defines a list/menu of commands</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_menuitem.asp">&lt;menuitem&gt;</a></td>
+<td>Defines a command/menu item that the user can invoke from a popup menu</td>
+</tr>
+<tr>
+<td><a href="tag_meta.asp">&lt;meta&gt;</a></td>
+<td>Defines metadata about an HTML document</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_meter.asp">&lt;meter&gt;</a></td>
+<td>Defines a scalar measurement within a known range (a gauge)</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_nav.asp">&lt;nav&gt;</a></td>
+<td>Defines navigation links</td>
+</tr>
+<tr>
+<td><a href="tag_noframes.asp" class="notsupported">&lt;noframes&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5.<br></span>Defines an alternate content for users that do not support frames</td>
+</tr>
+<tr>
+<td><a href="tag_noscript.asp">&lt;noscript&gt;</a></td>
+<td>Defines an alternate content for users that do not support
+client-side scripts</td>
+</tr>
+<tr>
+<td><a href="tag_object.asp">&lt;object&gt;</a></td>
+<td>Defines an embedded object</td>
+</tr>
+<tr>
+<td><a href="tag_ol.asp">&lt;ol&gt;</a></td>
+<td>Defines an ordered list</td>
+</tr>
+<tr>
+<td><a href="tag_optgroup.asp">&lt;optgroup&gt;</a></td>
+<td>Defines a group of related options in a drop-down list</td>
+</tr>
+<tr>
+<td><a href="tag_option.asp">&lt;option&gt;</a></td>
+<td>Defines an option in a drop-down list</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_output.asp">&lt;output&gt;</a></td>
+<td>Defines the result of a calculation</td>
+</tr>
+<tr>
+<td><a href="tag_p.asp">&lt;p&gt;</a></td>
+<td>Defines a paragraph</td>
+</tr>
+<tr>
+<td><a href="tag_param.asp">&lt;param&gt;</a></td>
+<td>Defines a parameter for an object</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_picture.asp">&lt;picture&gt;</a></td>
+<td>Defines a container for multiple image resources</td>
+</tr>
+<tr>
+<td><a href="tag_pre.asp">&lt;pre&gt;</a></td>
+<td>Defines preformatted text</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_progress.asp">&lt;progress&gt;</a></td>
+<td>Represents the progress of a task</td>
+</tr>
+<tr>
+<td><a href="tag_q.asp">&lt;q&gt;</a></td>
+<td>Defines a short quotation</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_rp.asp">&lt;rp&gt;</a></td>
+<td>Defines what to show in browsers that do not support ruby annotations</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_rt.asp">&lt;rt&gt;</a></td>
+<td>Defines an explanation/pronunciation of characters (for East Asian
+typography)</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_ruby.asp">&lt;ruby&gt;</a></td>
+<td>Defines a ruby annotation (for East Asian typography)</td>
+</tr>
+<tr>
+<td><a href="tag_s.asp">&lt;s&gt;</a></td>
+<td>Defines text that is no longer correct</td>
+</tr>
+<tr>
+<td><a href="tag_samp.asp">&lt;samp&gt;</a></td>
+<td>Defines sample output from a computer program</td>
+</tr>
+<tr>
+<td><a href="tag_script.asp">&lt;script&gt;</a></td>
+<td>Defines a client-side script</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_section.asp">&lt;section&gt;</a></td>
+<td>Defines a section in a document</td>
+</tr>
+<tr>
+<td><a href="tag_select.asp">&lt;select&gt;</a></td>
+<td>Defines a drop-down list</td>
+</tr>
+<tr>
+<td><a href="tag_small.asp">&lt;small&gt;</a></td>
+<td>Defines smaller text</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_source.asp">&lt;source&gt;</a></td>
+<td>Defines multiple media resources for media elements (&lt;video&gt; and &lt;audio&gt;)</td>
+</tr>
+<tr>
+<td><a href="tag_span.asp">&lt;span&gt;</a></td>
+<td>Defines a section in a document</td>
+</tr>
+<tr>
+<td><a href="tag_strike.asp" class="notsupported">&lt;strike&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5. Use &lt;del&gt; or &lt;s&gt; instead.<br></span>Defines strikethrough text</td>
+</tr>
+<tr>
+<td><a href="tag_strong.asp">&lt;strong&gt;</a></td>
+<td>Defines important text</td>
+</tr>
+<tr>
+<td><a href="tag_style.asp">&lt;style&gt;</a></td>
+<td>Defines style information for a document</td>
+</tr>
+<tr>
+<td><a href="tag_sub.asp">&lt;sub&gt;</a></td>
+<td>Defines subscripted text</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_summary.asp">&lt;summary&gt;</a></td>
+<td>Defines a visible heading for a &lt;details&gt; element</td>
+</tr>
+<tr>
+<td><a href="tag_sup.asp">&lt;sup&gt;</a></td>
+<td>Defines superscripted text</td>
+</tr>
+<tr>
+<td><a href="tag_table.asp">&lt;table&gt;</a></td>
+<td>Defines a table</td>
+</tr>
+<tr>
+<td><a href="tag_tbody.asp">&lt;tbody&gt;</a></td>
+<td>Groups the body content in a table</td>
+</tr>
+<tr>
+<td><a href="tag_td.asp">&lt;td&gt;</a></td>
+<td>Defines a cell in a table</td>
+</tr>
+<tr>
+<td><a href="tag_textarea.asp">&lt;textarea&gt;</a></td>
+<td>Defines a multiline input control (text area)</td>
+</tr>
+<tr>
+<td><a href="tag_tfoot.asp">&lt;tfoot&gt;</a></td>
+<td>Groups the footer content in a table</td>
+</tr>
+<tr>
+<td><a href="tag_th.asp">&lt;th&gt;</a></td>
+<td>Defines a header cell in a table</td>
+</tr>
+<tr>
+<td><a href="tag_thead.asp">&lt;thead&gt;</a></td>
+<td>Groups the header content in a table</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_time.asp">&lt;time&gt;</a></td>
+<td>Defines a date/time</td>
+</tr>
+<tr>
+<td><a href="tag_title.asp">&lt;title&gt;</a></td>
+<td>Defines a title for the document</td>
+</tr>
+<tr>
+<td><a href="tag_tr.asp">&lt;tr&gt;</a></td>
+<td>Defines a row in a table</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_track.asp">&lt;track&gt;</a></td>
+<td>Defines text tracks for media elements (&lt;video&gt; and &lt;audio&gt;)</td>
+</tr>
+<tr>
+<td><a class="notsupported" href="tag_tt.asp">&lt;tt&gt;</a></td>
+<td><span class="deprecated">Not supported in HTML5. Use CSS instead.<br></span>Defines teletype text</td>
+</tr>
+<tr>
+<td><a href="tag_u.asp">&lt;u&gt;</a></td>
+<td>Defines text that should be stylistically different from normal text</td>
+</tr>
+<tr>
+<td><a href="tag_ul.asp">&lt;ul&gt;</a></td>
+<td>Defines an unordered list</td>
+</tr>
+<tr>
+<td><a href="tag_var.asp">&lt;var&gt;</a></td>
+<td>Defines a variable</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_video.asp">&lt;video&gt;</a></td>
+<td>Defines a video or movie</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="tag_wbr.asp">&lt;wbr&gt;</a></td>
+<td>Defines a possible line-break</td>
+</tr>
+</table>
+<br>
+<br>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="/default.asp">&#10094; Home</a>
+<a class="w3-right w3-btn" href="ref_byfunc.asp">Next &#10095;</a>
+</div>
+</div>
+<div class="w3-col l2 m12" id="right">
+
+<!-- Ezoic - WideSkyScraper - sidebar -->
+<div id="ezoic-pub-ad-placeholder-104">
+  <div class="sidesection">
+    <div id="skyscraper">
+      <div id="div-gpt-ad-1422003450156-5">
+        <script>
+        googletag.cmd.push(function() {
+        googletag.display('div-gpt-ad-1422003450156-5');
+        });
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Ezoic - WideSkyScraper - sidebar -->
+
+<div class="sidesection">
+<h4><a href="/colors/colors_picker.asp">COLOR PICKER</a></h4>
+<a href="/colors/colors_picker.asp">
+<img src="/images/colorpicker.gif" alt="colorpicker"></a>
+</div>
+
+<div class="sidesection">
+<h4><a href="/howto/default.asp">LEARN MORE</a></h4>
+<p>
+<a href="/howto/howto_js_tabs.asp">Tabs</a><br>
+<a href="/howto/howto_css_dropdown.asp">Dropdowns</a><br>
+<a href="/howto/howto_js_accordion.asp">Accordions</a><br>
+<a href="/howto/howto_js_weight_converter.asp">Convert Weights</a><br>
+<a href="/howto/howto_css_animate_buttons.asp">Animated Buttons</a><br>
+<a href="/howto/howto_js_sidenav.asp">Side Navigation</a><br>
+<a href="/howto/howto_js_topnav.asp">Top Navigation</a><br>
+<a href="/howto/howto_js_animate.asp">JS Animations</a><br>
+<a href="/howto/howto_css_modals.asp">Modal Boxes</a><br>
+<a href="/howto/howto_js_progressbar.asp">Progress Bars</a><br>
+<a href="/howto/howto_css_login_form.asp">Login Form</a><br>
+<a href="/howto/howto_html_include.asp">HTML Includes</a><br>
+<a href="/howto/howto_google_maps.asp">Google Maps</a><br>
+<a href="/howto/howto_css_loader.asp">Loaders</a><br>
+<a href="/howto/howto_css_tooltip.asp">Tooltips</a><br>
+<a href="/howto/howto_js_slideshow.asp">Slideshow</a><br>
+<a href="/howto/howto_js_filter_lists.asp">Filter List</a><br>
+<a href="/howto/howto_js_sort_list.asp">Sort List</a><br>
+</p>
+</div>
+
+<div class="sidesection">
+<h4>SHARE</h4>
+<div class="w3-text-grey sharethis">
+<script>
+<!--
+try{
+loc=location.pathname;
+if (loc.toUpperCase().indexOf(".ASP")<0) loc=loc+"default.asp";
+txt='<a href="http://www.facebook.com/sharer.php?u=https://www.w3schools.com'+loc+'" target="_blank" title="Facebook"><span class="fa fa-facebook-square fa-2x"></span></a>';
+txt=txt+'<a href="https://twitter.com/home?status=Currently reading https://www.w3schools.com'+loc+'" target="_blank" title="Twitter"><span class="fa fa-twitter-square fa-2x"></span></a>';
+txt=txt+'<a href="https://plus.google.com/share?url=https://www.w3schools.com'+loc+'" target="_blank" title="Google+"><span class="fa fa-google-plus-square fa-2x"></span></a>';
+document.write(txt);
+} catch(e) {}
+//-->
+</script>
+<br><br>
+<a href="javascript:void(0);" onclick="clickFBLike()" title="Like W3Schools on Facebook">
+<span class="fa fa-thumbs-o-up fa-2x"></span></a>
+<div id="fblikeframe" class="w3-modal">
+<div class="w3-modal-content w3-padding-64 w3-animate-zoom" id="popupDIV"></div>
+</div>
+</div>
+</div>
+
+<div class="sidesection">
+<h4><a target="_blank" href="//www.w3schools.com/cert/default.asp">CERTIFICATES</a></h4>
+<p>HTML, CSS, JavaScript, PHP, jQuery, Bootstrap and XML.</p>
+<a target="_blank" href="//www.w3schools.com/cert/default.asp" class="w3-btn w3-dark-grey">
+Read More &raquo;</a>
+</div>
+  <div id="stickypos" class="sidesection" style="text-align:center;">
+    <div id="stickyadcontainer">
+
+<!-- Ezoic - StickySkyScraper - sidebar -->
+<div id="ezoic-pub-ad-placeholder-105">
+      <div style="position:relative;margin:auto;">
+        <div id='div-gpt-ad-1472547360578-0'>
+          <script>
+          if (Number(w3_getStyleValue(document.getElementById("main"), "height").replace("px", "")) > 2200) {
+          googletag.cmd.push(function() { googletag.display('div-gpt-ad-1472547360578-0'); });
+          }
+          </script>
+        </div>
+      </div>
+</div>
+<!-- End Ezoic - StickySkyScraper - sidebar -->
+    </div>
+  </div>
+
+<script>
+  window.addEventListener("scroll", fix_stickyad);
+  window.addEventListener("resize", fix_stickyad);
+</script>
+
+</div>
+</div>
+<div id="footer" class="footer w3-container w3-white">
+
+<hr>
+<div style="overflow:auto">
+  <!-- Ezoic - BottomMediumRectangle - bottom_of_page -->
+  <div id="ezoic-pub-ad-placeholder-106">
+    <!-- BottomMediumRectangle -->
+    <div class="bottomad" id='div-gpt-ad-1422003450156-0'>
+      <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1422003450156-0'); });
+      </script>
+    </div>
+  </div>
+  <!-- End Ezoic - BottomMediumRectangle - bottom_of_page -->
+  <!-- Ezoic - RightBottomMediumRectangle - bottom_of_page -->
+  <div id="ezoic-pub-ad-placeholder-107">
+    <!-- RightBottomMediumRectangle -->
+    <div class="bottomad" id='div-gpt-ad-1422003450156-3'>
+      <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1422003450156-3'); });
+      </script>
+    </div>
+  </div>
+  <!-- End Ezoic - RightBottomMediumRectangle - bottom_of_page -->
+</div>
+<hr>
+<div class="w3-row w3-center w3-small">
+<div class="w3-col l3 m3 s12">
+<a href="javascript:void(0);" onclick="displayError();return false" style="white-space:nowrap;">REPORT ERROR</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="javascript:void(0);" target="_blank" onclick="printPage();return false;">PRINT PAGE</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="/forum/default.asp" target="_blank">FORUM</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="/about/default.asp" target="_top">ABOUT</a>
+</div>
+</div>
+<hr>
+<div class="w3-light-grey w3-padding w3-center" id="err_form" style="display:none;">
+<span onclick="this.parentElement.style.display='none'" class="w3-closebtn">&times;</span>
+<h2>Your Suggestion:</h2>
+<form>
+<div class="w3-group">
+<label for="err_email">Your E-mail:</label>
+<input class="w3-input" type="text" style="width:100%" id="err_email" name="err_email">
+</div>
+<div class="w3-group">
+<label for="err_email">Page address:</label>
+<input class="w3-input" type="text" style="width:100%" id="err_url" name="err_url" disabled="disabled">
+</div>
+<div class="w3-group">
+<label for="err_email">Description:</label>
+<textarea rows="10" class="w3-input" id="err_desc" name="err_desc" style="width:100%;"></textarea>
+</div>
+<div class="form-group">
+<button type="button" onclick="sendErr()">Submit</button>
+</div>
+<br>
+</form>
+</div>
+<div class="w3-container w3-light-grey w3-padding" id="err_sent" style="display:none;">
+<span onclick="this.parentElement.style.display='none'" class="w3-closebtn">&times;</span>
+<h2>Thank You For Helping Us!</h2>
+<p>Your message has been sent to W3Schools.</p>
+</div>
+
+<div class="w3-row w3-center w3-small">
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 Tutorials</h4>
+<a href="/html/default.asp">HTML Tutorial</a><br>
+<a href="/css/default.asp">CSS Tutorial</a><br>
+<a href="/js/default.asp">JavaScript Tutorial</a><br>
+<a href="/w3css/default.asp">W3.CSS Tutorial</a><br>
+<a href="/bootstrap/default.asp">Bootstrap Tutorial</a><br>
+<a href="/sql/default.asp">SQL Tutorial</a><br>
+<a href="/php/default.asp">PHP Tutorial</a><br>
+<a href="/jquery/default.asp">jQuery Tutorial</a><br>
+<a href="/angular/default.asp">Angular Tutorial</a><br>
+<a href="/xml/default.asp">XML Tutorial</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 References</h4>
+<a href="/tags/default.asp">HTML Reference</a><br>
+<a href="/cssref/default.asp">CSS Reference</a><br>
+<a href="/jsref/default.asp">JavaScript Reference</a><br>
+<a href="/w3css/w3css_references.asp">W3.CSS Reference</a><br>
+<a href="/browsers/default.asp">Browser Statistics</a><br>
+<a href="/php/php_ref_array.asp">PHP Reference</a><br>
+<a href="/colors/colors_names.asp">HTML Colors</a><br>
+<a href="/charsets/default.asp">HTML Character Sets</a><br>
+<a href="/jquery/jquery_ref_selectors.asp">jQuery Reference</a><br>
+<a href="/angular/angular_ref_directives.asp">AngularJS Reference</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 Examples</h4>
+<a href="/html/html_examples.asp">HTML Examples</a><br>
+<a href="/css/css_examples.asp">CSS Examples</a><br>
+<a href="/js/js_examples.asp">JavaScript Examples</a><br>
+<a href="/w3css/w3css_examples.asp">W3.CSS Examples</a><br>
+<a href="/js/js_dom_examples.asp">HTML DOM Examples</a><br>
+<a href="/php/php_examples.asp">PHP Examples</a><br>
+<a href="/asp/asp_examples.asp">ASP Examples</a><br>
+<a href="/jquery/jquery_examples.asp">jQuery Examples</a><br>
+<a href="/angular/angular_examples.asp">Angular Examples</a><br>
+<a href="/xml/xml_examples.asp">XML Examples</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Web Certificates</h4>
+<a href="/cert/default.asp">HTML Certificate</a><br>
+<a href="/cert/default.asp">CSS Certificate</a><br>
+<a href="/cert/default.asp">JavaScript Certificate</a><br>
+<a href="/cert/default.asp">jQuery Certificate</a><br>
+<a href="/cert/default.asp">PHP Certificate</a><br>
+<a href="/cert/default.asp">Bootstrap Certificate</a><br>
+<a href="/cert/default.asp">XML Certificate</a><br>
+</div>
+</div>
+</div>
+
+<hr>
+<div class="w3-center w3-small w3-opacity">
+W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding.
+Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.
+While using this site, you agree to have read and accepted our <a href="/about/about_copyright.asp">terms of use</a>,
+<a href="/about/about_privacy.asp">cookie and privacy policy</a>.
+<a href="/about/about_copyright.asp">Copyright 1999-2017</a> by Refsnes Data. All Rights Reserved.<br>
+ <a href="//www.w3schools.com/w3css/">Powered by W3.CSS</a>.<br><br>
+<a href="//www.w3schools.com">
+<img style="width:150px;height:28px;border:0" src="/images/w3schoolscom_gray.gif" alt="W3Schools.com"></a>
+</div>
+<br><br>
+</div>
+
+</div>
+
+<script src="/lib/w3schools_footer.js"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]--><script type='text/javascript' src='//www.w3schools.com/utilcave_com/inc/ezf-min.php?a=a&cb=3&shcb=8&UXSpeed=true' style='display:none;' async></script>
+</body>
+</html>
